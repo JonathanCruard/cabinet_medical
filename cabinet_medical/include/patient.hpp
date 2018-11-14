@@ -8,6 +8,7 @@ class patient : public person
 {
 public:
 //Methods
+    //contructors
     patient();
 
 

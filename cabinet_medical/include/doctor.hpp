@@ -11,6 +11,7 @@ class doctor : public person
 public:
 
 //Methods
+    //contructors
     doctor();
 
 private:

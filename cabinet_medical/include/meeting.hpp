@@ -6,6 +6,7 @@ class meeting
 {
 public:
 //Methods
+    //contructors  
     meeting();
 
 //Methods
