@@ -21,6 +21,8 @@ public:
     unsigned int get_month();
     unsigned int get_day();
 
+    string display_date();
+
 //Methods
     //contructors
     date();
