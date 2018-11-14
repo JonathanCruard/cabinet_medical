@@ -9,24 +9,13 @@
 class doctor : public person
 {
 public:
-
-
-//Methods
-
-private:
 //Variable
-    string _blood_group;
-    int _security_number;
-    int _telephon_number;
-//Class methods
-    //setters
-    void set_blood_group(string blood_group);
-    void set_security_number(int security_number);
-    void set_telephon(int telephon_number);
-    //getters
-    string get_blood_group();
-    int get_security_number();
-    int get_telephon();
+    string _speciality;
+//class methods
+//setters
+    void set_speciality(string speciality);
+//getters
+    unsigned int get_speciality();
 };
 
 

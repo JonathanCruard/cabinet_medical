@@ -8,12 +8,20 @@ class date
 {
 public:
 //Variable
-    string _speciality;
+    unsigned int _year;
+    unsigned int _month;
+    unsigned int _day;
 //class methods
 //setters
-    void set_speciality(string speciality);
+    void set_year(int year);
+    void set_month(int month);
+    void set_day(int day);
 //getters
-    unsigned int get_speciality();
+    unsigned int get_year();
+    unsigned int get_month();
+    unsigned int get_day();
+
+
 };
 
 
