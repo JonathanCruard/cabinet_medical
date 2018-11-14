@@ -3,6 +3,7 @@
 
 #include "person.hpp"
 #include "global.hpp"
+#include "date.hpp"
 
 class patient : public person
 {
@@ -23,11 +24,11 @@ private:
     //setters
     void set_blood_group(string blood_group);
     void set_security_number(int security_number);
-    void set_telephon(int telephon_number);
+    void set_phone(int telephon_number);
     //getters
     string get_blood_group();
     int get_security_number();
-    int get_telephon();
+    int get_phone();
 
 };
 

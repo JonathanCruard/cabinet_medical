@@ -1,6 +1,8 @@
 #ifndef DEF_MEETING
 #define DEF_MEETING
 
+#include "global.hpp"
+#include "date.hpp"
 
 class meeting
 {
