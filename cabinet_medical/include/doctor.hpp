@@ -8,8 +8,7 @@
 
 class doctor : public person
 {
-protected:
-    
+
 
 
 };

@@ -5,6 +5,7 @@
 
 class person
 {
+protected:
     string firstname;
     string lastname;
 };
