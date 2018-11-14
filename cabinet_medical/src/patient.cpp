@@ -1,2 +1,2 @@
-#include "patients.hpp"
+#include "patient.hpp"
 #include "person.hpp"
