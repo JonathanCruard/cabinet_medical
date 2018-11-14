@@ -9,8 +9,7 @@
 class doctor : public person
 {
 protected:
-    string firstname;
-    string lastname;
+    
 
 
 };

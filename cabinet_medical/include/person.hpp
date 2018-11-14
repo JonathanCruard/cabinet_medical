@@ -5,7 +5,8 @@
 
 class person
 {
-    
+    string firstname;
+    string lastname;
 };
 
 
