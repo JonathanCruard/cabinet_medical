@@ -10,6 +10,7 @@ public:
 //Methods
     //contructors
     patient();
+    patient(string blood_group, int security_number, int telephon_number);
 
 
 

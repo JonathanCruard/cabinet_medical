@@ -6,8 +6,9 @@ class meeting
 {
 public:
 //Methods
-    //contructors  
+    //contructors
     meeting();
+    meeting(date meeting_date, int id_doctor, int id_patient, string object);
 
 //Methods
 

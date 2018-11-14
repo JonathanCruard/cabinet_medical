@@ -13,6 +13,7 @@ public:
 //Methods
     //contructors
     doctor();
+    doctor(string speciality);
 
 private:
 //Variable

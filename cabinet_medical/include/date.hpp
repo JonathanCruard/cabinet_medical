@@ -24,6 +24,7 @@ public:
 //Methods
     //contructors
     date();
+    date(unsigned int year, unsigned int month, unsigned int day);
 };
 
 
