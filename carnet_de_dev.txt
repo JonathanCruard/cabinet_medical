@@ -1,0 +1,20 @@
+Idees a implementees:
+    -ajouter actes mediacle dans les prescriptions
+
+
+
+Deadlines:
+14/11
+    diagramme de classe
+    analyse
+    definition des classe (1/2)
+21/11
+    definition des classe (2/2)
+    methodes(1/2)
+28/11
+    methodes(2/2)
+    liaisons des classes
+04/11
+    tests sur jeux d essai
+    rapport
+    ouverture et aller plus loin
