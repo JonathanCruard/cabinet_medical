@@ -7,9 +7,10 @@
 class patient : public person
 {
 public:
-
-
 //Methods
+    patient();
+
+
 
 private:
 //Variable

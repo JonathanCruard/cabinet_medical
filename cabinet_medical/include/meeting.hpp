@@ -5,7 +5,8 @@
 class meeting
 {
 public:
-
+//Methods
+    meeting();
 
 //Methods
 

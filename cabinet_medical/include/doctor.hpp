@@ -9,12 +9,17 @@
 class doctor : public person
 {
 public:
+
+//Methods
+    doctor();
+
+private:
 //Variable
     string _speciality;
 //class methods
-//setters
+    //setters
     void set_speciality(string speciality);
-//getters
+    //getters
     unsigned int get_speciality();
 };
 
