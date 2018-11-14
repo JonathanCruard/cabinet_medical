@@ -7,6 +7,15 @@
 class patient : public person
 {
 public:
+
+
+//Methods
+
+private:
+//Variable
+    string _blood_group;
+    int _security_number;
+    int _telephon_number;
 //Class methods
     //setters
     void set_blood_group(string blood_group);
@@ -17,13 +26,6 @@ public:
     int get_security_number();
     int get_telephon();
 
-//Methods
-
-private:
-    //Variable
-        string _blood_group;
-        int _security_number;
-        int _telephon_number;
 };
 
 
