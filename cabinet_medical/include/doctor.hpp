@@ -8,9 +8,21 @@
 
 class doctor : public person
 {
+public:
 
+//Methods
+    //contructors
+    doctor();
+    doctor(string speciality);
 
-
+private:
+//Variable
+    string _speciality;
+//class methods
+    //setters
+    void set_speciality(string speciality);
+    //getters
+    unsigned int get_speciality();
 };
 
 
