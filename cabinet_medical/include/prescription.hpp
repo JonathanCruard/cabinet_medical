@@ -1,6 +1,10 @@
 #ifndef DEF_PRESCRIPTION
 #define DEF_PRESCRIPTION
 
+#include "global.hpp"
+#include "drug_struct.hpp"
+#include "date.hpp"
+
 class prescription
 {
 private:
