@@ -20,7 +20,7 @@ private:
     //setters
     void set_blood_group(string blood_group);
     void set_security_number(int security_number);
-    void set_telephon(int _telephon_number);
+    void set_telephon(int telephon_number);
     //getters
     string get_blood_group();
     int get_security_number();

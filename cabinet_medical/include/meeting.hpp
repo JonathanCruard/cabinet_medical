@@ -19,7 +19,7 @@ private:
     //setters
     void set_id_doctor(int id_doctor);
     void set_id_patient(int id_patient);
-    void set_object(string _object);
+    void set_object(string object);
     //getters
     int get_id_doctor();
     int get_id_patient();
