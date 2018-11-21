@@ -11,7 +11,7 @@ drug_struct::drug_struct()
     set_posology();
 }
 
-drug_struct::drug_struct(string drug_name, float quantity, float posology)
+drug_struct::drug_struct(string drug_name, string quantity, string posology)
 {
     set_name(drug_name);
     set_quantity(quantity);
@@ -25,11 +25,11 @@ void drug_struct::set_name(string drug_name)
 {
     this->_drug_name = drug_name;
 }
-void drug_struct::set_quantity(float quantity)
+void drug_struct::set_quantity(string quantity)
 {
     this->_quantity = quantity;
 }
-void drug_struct::set_posology(float posology)
+void drug_struct::set_posology(string posology)
 {
     this->_posology = posology;
 }

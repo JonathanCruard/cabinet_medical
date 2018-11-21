@@ -27,7 +27,7 @@ private:
 public:
     //constructors
     drug_struct();
-    drug_struct(string drug_name, float quantity, float posology);
+    drug_struct(string drug_name, string quantity, string posology);
 
 
 };
