@@ -28,9 +28,8 @@ protected:
 public:
     //constructors
     person();
-    person(string first_name, string last_name)
+    person(string first_name, string last_name);
 
 };
-
 
 #endif
