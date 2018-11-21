@@ -8,25 +8,31 @@ class date
 {
 public:
 //Variable
-    unsigned int _year;
-    unsigned int _month;
-    unsigned int _day;
+    unsigned _year;
+    unsigned _month;
+    unsigned _day;
+    unsigned _hour;
+    unsigned _minute;
 //class methods
     //setters
-    void set_year(int year);
-    void set_month(int month);
-    void set_day(int day);
+    void set_year(unsigned year);
+    void set_month(unsigned month);
+    void set_day(unsigned day);
+    void set_hour(unsigned hour)
+    void set_minute(unsigned minute)
     //getters
-    unsigned int get_year();
-    unsigned int get_month();
-    unsigned int get_day();
-
-    string display_date();
+    unsigned get_year();
+    unsigned get_month();
+    unsigned get_day();
+    unsigned get_hour()
+    unsigned get_day()
+    //displayers
+    void display_date();
 
 //Methods
     //contructors
     date();
-    date(unsigned int year, unsigned int month, unsigned int day);
+    date(unsigned year, unsigned month, unsigned day, unsigned hour, unsigned minute);
 };
 
 

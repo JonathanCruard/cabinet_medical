@@ -8,49 +8,81 @@ date::date()
     set_year(0);
     set_month(0);
     set_day(0);
+    set_hour(0);
+    set_minute(0);
 }
-date::date(unsigned int year, unsigned int month, unsigned int day)
+
+date::date(unsigned year, unsigned month, unsigned day, unsigned hour, unsigned minute)
 {
     set_year(year);
     set_month(month);
     set_day(day);
+    set_hour(hour);
+    set_minute(minute);
 }
 
 //==============================================================================
 // Setters
 //==============================================================================
 
-date::set_year(unsigned int year)
+void date::set_year(unsigned year)
 {
     _year = year;
 }
 
-date::set_month(unsigned int month)
+void date::set_month(unsigned month)
 {
     _month = month;
 }
 
-date::set_day(unsigned int day)
+void date::set_day(unsigned day)
 {
     _day = day;
 }
 
+void date::set_hour(unsigned hour)
+{
+    return _hour;
+}
+
+void date::set_minute(unsigned minute)
+{
+    return _minute;
+}
 
 //==============================================================================
 // Getters
 //==============================================================================
 
-date::get_year()
+void date::get_year()
 {
     return _year;
 }
 
-date::get_month()
+void date::get_month()
 {
     return _month;
 }
 
-date::get_day()
+void date::get_day()
 {
     return _day;
+}
+
+void date::get_hour()
+{
+    return _hour;
+}
+
+void date::get_day()
+{
+    return _minute;
+}
+//==============================================================================
+// Displayer
+//==============================================================================
+void date::display()
+{
+    std::cout << _day << '/' << _month << '/' <<  _year << '\n';
+    std::cout << _hour << ':' << _minute << '\n';
 }
