@@ -26,12 +26,12 @@ INC=-I./include
  rm=rm -f
 #Give .o files to create
 OBJ=$(OBJDIR)/main.o \
-$(OBJDIR)/date.o \
+$(OBJDIR)/meeting.o \
+$(OBJDIR)/doctor.o \
 $(OBJDIR)/person.o \
 $(OBJDIR)/patient.o \
-$(OBJDIR)/doctor.o \
 $(OBJDIR)/prescription.o \
-$(OBJDIR)/metting.o
+$(OBJDIR)/date.o
 
 
 TARGET=$(BINDIR)/gestion_cabinet.exe
@@ -81,9 +81,9 @@ $(OBJDIR)/date.o: ./$(SRCDIR)/date.cpp
 #---------------------
 # perscription
 #---------------------
-$(OBJDIR)/perscription.o: ./$(SRCDIR)/perscription.cpp
+$(OBJDIR)/prescription.o: ./$(SRCDIR)/prescription.cpp
 	@$(CXX) $@ -c $< $(CXXFLAGS)
-	@echo "Compiled perscription.o"
+	@echo "Compiled prescription.o"
 
 
 #---------------------

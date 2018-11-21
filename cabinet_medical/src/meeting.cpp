@@ -1,40 +1,38 @@
-#include "meeting.h"
+#include "meeting.hpp"
 
 //==============================================================================
 // Constructors
 //==============================================================================
-meeting::meeting()
+meeting::meeting(doctor doc, patient sickguy)
 {
-    _meeting_date = meeting_date;
-    set_id_doctor(42);
-    set_id_patient(42);
-    set_object(" ");
-}
-meeting::meeting(date meeting_date, int id_doctor, int id_patient, string object)
-{
-    _meeting_date = meeting_date;
-    set_id_doctor(id_doctor);
-    set_id_patient(id_patient);
-    set_object(object);
+    set_meeting_date();
+    set_id_doctor(doc.get_id());
+    set_id_patient(sickguy.get_id());
+    set_object();
 }
 
 //==============================================================================
 // Setters
 //==============================================================================
 
-meeting::set_id_doctor(int id_doctor)
+void meeting::set_id_doctor(unsigned id_doc)
 {
-    _id_doctor = id_doctor;
+    this->_id_doctor = id_doc;
 }
 
-meeting::set_id_patient(int id_patient)
+void meeting::set_id_patient(unsigned id_patient)
 {
-    _id_patient = id_patient;
+    this->_id_patient = id_patient;
 }
 
-meeting::set_object(string object)
+void meeting::set_meeting_date()
 {
-    _object = object;
+    date _meeting_date;
+}
+
+void meeting::set_object()
+{
+    std::cin >> _object;
 }
 
 
@@ -42,17 +40,17 @@ meeting::set_object(string object)
 // Getters
 //==============================================================================
 
-meeting::get_id_doctor()
+unsigned meeting::get_id_doctor()
 {
     return _id_doctor;
 }
 
-meeting::get_id_patient()
+unsigned meeting::get_id_patient()
 {
     return _id_patient;
 }
 
-meeting::get_object(string object)
+string meeting::get_object()
 {
     return _object;
 }
