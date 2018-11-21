@@ -22,7 +22,7 @@ void prescription::set_date()
     date _prescription_date;
 }
 
-void append_drug(drug_struct drug);
+void append_drug(drug_struct drug)
 {
 
 }
