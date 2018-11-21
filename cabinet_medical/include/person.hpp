@@ -10,7 +10,7 @@ protected:
     //class variable
     string _first_name;
     string _last_name;
-    unsigned int _id;
+    unsigned _id;
 
 //class method
     //setters
@@ -19,9 +19,9 @@ protected:
     void set_id();
 
     //getters
-    string get_f_name();
-    string get_l_name();
-    int get_id();
+    string get_f_name(string nom);
+    string get_l_name(string nom);
+    unsigned get_id();
     //affichage
     void display();
 

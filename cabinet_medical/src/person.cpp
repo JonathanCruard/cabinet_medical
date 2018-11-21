@@ -1,12 +1,12 @@
-#include "person.h"
+#include "person.hpp"
 
 //==============================================================================
 // Constructors
 //==============================================================================
 person::person()
 {
-    set_f_name("");
-    set_l_name("");
+    set_f_name();
+    set_l_name();
     set_id();
 }
 
@@ -19,14 +19,14 @@ person::person(string first_name, string last_name)
 //==============================================================================
 // Setters
 //==============================================================================
-void person::set_f_name(string nom);
+void person::set_f_name(string nom)
 {
-    _first_name = nom;
+    this->_first_name = nom;
 }
 
-void person::set_l_name(string nom);
+void person::set_l_name(string nom)
 {
-    _last_name = nom;
+    this->_last_name = nom;
 }
 
 void person::set_id()
@@ -37,19 +37,19 @@ void person::set_id()
 //==============================================================================
 // Setters
 //==============================================================================
-void person::get_f_name(string nom);
+string person::get_f_name(string nom)
 {
     return _first_name;
 }
 
-void person::get_l_name(string nom);
+string person::get_l_name(string nom)
 {
     return _last_name;
 }
 
-void person::get_id()
+unsigned person::get_id()
 {
-    return id;
+    return _id;
 }
 
 //==============================================================================
