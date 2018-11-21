@@ -9,7 +9,7 @@ class doctor : public person
         set_id();
         set_speciality("");
     }
-    doctor::doctor(string speciality)
+    doctor::doctor(string speciality) person(string first_name, string last_name)
     {
         set_f_name(first_name);
         set_l_name(last_name);
