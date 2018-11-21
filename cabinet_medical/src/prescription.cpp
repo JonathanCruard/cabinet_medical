@@ -1,62 +1,35 @@
-#include "prescription.h"
+#include "prescription.hpp"
 
 //==============================================================================
 // Constructors
 //==============================================================================
-prescription::prescription()
+prescription::prescription(doctor doc)
 {
-    set_prescriptor();
+    set_prescriptor(doc.get_id());
     set_date();
 }
 
-prescription::prescription(string first_name, string last_name)
-{
-    set_f_name(first_name);
-    set_l_name(last_name);
-    set_id();
-}
 //==============================================================================
 // Setters
 //==============================================================================
-void prescription::set_f_name(string nom);
+void prescription::set_prescriptor(int prescriptor_id)
 {
-    _first_name = nom;
+    this->_prescriptor = prescriptor_id;
 }
 
-void prescription::set_l_name(string nom);
+void prescription::set_date()
 {
-    _last_name = nom;
+    date _prescription_date;
 }
 
-void prescription::set_id()
+void append_drug(drug_struct drug);
 {
-    //TODO récupérer les ID existants dans les fichiers et en créer un nouveau
-}
 
-//==============================================================================
-// Setters
-//==============================================================================
-void prescription::get_f_name(string nom);
-{
-    return _first_name;
 }
-
-void prescription::get_l_name(string nom);
-{
-    return _last_name;
-}
-
-void prescription::get_id()
-{
-    return id;
-}
-
 //==============================================================================
 // Displayer
 //==============================================================================
-void prescription::display()
-{
-    std::cout << _first_name << '\n';
-    std::cout << _last_name << '\n';
-    std::cout << _id << '\n';
-}
+// void prescription::display()
+// {
+//
+// }

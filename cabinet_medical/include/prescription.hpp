@@ -4,6 +4,7 @@
 #include "global.hpp"
 #include "drug_struct.hpp"
 #include "date.hpp"
+#include "doctor.hpp"
 
 class prescription
 {
@@ -15,9 +16,10 @@ private:
 
 //class methods
     //setters
-    void set_prescripteur(int doctor);
-    void set_date(date date);
+    void set_prescriptor(int prescriptor_id);
+    void set_date();
     void append_drug(drug_struct drug);
+
     //getters
     int get_prescriptor();
     date get_date();
@@ -25,10 +27,7 @@ private:
 
 public:
     //constructors
-    prescription();
-    prescription(int prescriptor, date date);
-    prescription(int prescriptor, date date, list<drug_struct>);
-    //TODO à revoir
+    prescription(doctor doc);
 };
 
 
