@@ -6,8 +6,7 @@
 prescription::prescription()
 {
     set_prescriptor();
-    set_l_name("");
-    set_id();
+    set_date();
 }
 
 prescription::prescription(string first_name, string last_name)

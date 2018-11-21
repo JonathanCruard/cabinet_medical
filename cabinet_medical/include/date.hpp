@@ -18,14 +18,14 @@ public:
     void set_year(unsigned year);
     void set_month(unsigned month);
     void set_day(unsigned day);
-    void set_hour(unsigned hour)
-    void set_minute(unsigned minute)
+    void set_hour(unsigned hour);
+    void set_minute(unsigned minute);
     //getters
     unsigned get_year();
     unsigned get_month();
     unsigned get_day();
-    unsigned get_hour()
-    unsigned get_day()
+    unsigned get_hour();
+    unsigned get_day();
     //displayers
     void display_date();
 
