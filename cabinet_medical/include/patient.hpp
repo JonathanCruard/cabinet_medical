@@ -14,6 +14,11 @@ public:
     patient(string blood_group, int security_number, int telephon_number);
 
 
+    //getters
+    string get_blood_group();
+    int get_security_number();
+    int get_phone();
+
 
 private:
 //Variable
@@ -29,10 +34,7 @@ private:
     void set_blood_group();
     void set_security_number();
     void set_phone();
-    //getters
-    string get_blood_group();
-    int get_security_number();
-    int get_phone();
+
 
 };
 
