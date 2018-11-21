@@ -21,13 +21,13 @@ date::date(unsigned year, unsigned month, unsigned day, unsigned hour, unsigned 
     set_minute(minute);
 }
 
-date::date(date copy)
+date::date(date const& copy)
 {
-    set_year(copy.year);
-    set_month(copy.month);
-    set_day(copy.day);
-    set_hour(copy.hour);
-    set_minute(copy.minute);
+    set_year(copy._year);
+    set_month(copy._month);
+    set_day(copy._day);
+    set_hour(copy._hour);
+    set_minute(copy._minute);
 }
 
 //==============================================================================
@@ -36,27 +36,27 @@ date::date(date copy)
 
 void date::set_year(unsigned year)
 {
-    this._year = year;
+    this->_year = year;
 }
 
 void date::set_month(unsigned month)
 {
-    _month = month;
+    this->_month = month;
 }
 
 void date::set_day(unsigned day)
 {
-    _day = day;
+    this->_day = day;
 }
 
 void date::set_hour(unsigned hour)
 {
-    _hour = hour;
+    this->_hour = hour;
 }
 
 void date::set_minute(unsigned minute)
 {
-    _minute = minute;
+    this->_minute = minute;
 }
 
 
@@ -89,27 +89,27 @@ void date::set_minute()
 // Getters
 //==============================================================================
 
-void date::get_year()
+unsigned date::get_year()
 {
     return _year;
 }
 
-void date::get_month()
+unsigned date::get_month()
 {
     return _month;
 }
 
-void date::get_day()
+unsigned date::get_day()
 {
     return _day;
 }
 
-void date::get_hour()
+unsigned date::get_hour()
 {
     return _hour;
 }
 
-void date::get_day()
+unsigned date::get_minute()
 {
     return _minute;
 }

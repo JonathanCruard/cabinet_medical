@@ -27,10 +27,10 @@ INC=-I./include
 #Give .o files to create
 OBJ=$(OBJDIR)/main.o \
 $(OBJDIR)/date.o \
-$(OBJDIR)/person.o \
 $(OBJDIR)/patient.o \
 $(OBJDIR)/doctor.o \
 $(OBJDIR)/prescription.o \
+$(OBJDIR)/person.o \
 $(OBJDIR)/metting.o
 
 

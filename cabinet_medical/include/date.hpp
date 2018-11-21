@@ -33,7 +33,7 @@ public:
     unsigned get_hour();
     unsigned get_minute();
     //displayers
-    void display_date();
+    void display();
 
 //Methods
     //contructors
