@@ -5,12 +5,8 @@
 //==============================================================================
 person::person()
 {
-    std::cout << "person" << '\n';
-    std::cout << "fist name" << '\n';
     set_f_name();
-    std::cout << "last name" << '\n';
     set_l_name();
-    std::cout << "id inited" << '\n';
     set_id();
 }
 
@@ -40,14 +36,17 @@ void person::set_l_name(string nom)
 // }
 void person::set_f_name()
 {
+    std::cout << "What is your first name? " << '\n';
     std::cin >> _first_name;
 }
 void person::set_l_name()
 {
+    std::cout << "What is your last name? " << '\n';
     std::cin >> _last_name;
 }
 void person::set_id()
 {
+    std::cout << "What is your id? " << '\n';
     std::cin >> _id;
 }
 //==============================================================================
