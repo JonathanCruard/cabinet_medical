@@ -8,21 +8,21 @@ class drug_struct
 private:
 //class variables
     string _drug_name;
-    float _quantity;
-    float _posology;
+    string _quantity;
+    string _posology;
 //class methods
     //setters
     void set_name(string nom);
-    void set_quantity(float quantity);
-    void set_posology(float posology);
+    void set_quantity(string quantity);
+    void set_posology(string posology);
 
     void set_name();
     void set_quantity();
     void set_posology();
     //getters
     string get_name();
-    float get_quantity();
-    float get_posology();
+    string get_quantity();
+    string get_posology();
 
 public:
     //constructors

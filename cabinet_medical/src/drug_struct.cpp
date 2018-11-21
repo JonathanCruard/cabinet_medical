@@ -33,13 +33,29 @@ void drug_struct::set_posology(float posology)
 
 void drug_struct::set_name()
 {
+    std::cout << "Enter drug name" << '\n';
     std::cin >> _drug_name;
 }
 void drug_struct::set_quantity()
 {
+    std::cout << "Enter quantity" << '\n';
     std::cin >> _quantity;
 }
 void drug_struct::set_posology()
 {
+    std::cout << "Enter posology" << '\n';
     std::cin >> _posology;
+}
+
+void drug_struct::get_name()
+{
+    return _drug_name;
+}
+void drug_struct::get_quantity()
+{
+    return _quantity;
+}
+void drug_struct::get_posology()
+{
+    return _posology;
 }
