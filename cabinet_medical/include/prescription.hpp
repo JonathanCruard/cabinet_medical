@@ -21,7 +21,7 @@ private:
     //getters
     int get_prescriptor();
     date get_date();
-    drugs get_drugs();
+    drug_struct get_drugs();
 
 public:
     //constructors

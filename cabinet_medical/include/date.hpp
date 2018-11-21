@@ -39,7 +39,7 @@ public:
     //contructors
     date();
     date(unsigned year, unsigned month, unsigned day, unsigned hour, unsigned minute);
-    date(date copy);
+    date(date const& copy);
 };
 
 
