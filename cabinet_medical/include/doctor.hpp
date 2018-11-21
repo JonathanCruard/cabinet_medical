@@ -21,6 +21,7 @@ private:
 //class methods
     //setters
     void set_speciality(string speciality);
+    void set_speciality();
     //getters
     string get_speciality();
 };
