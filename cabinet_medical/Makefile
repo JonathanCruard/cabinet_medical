@@ -25,7 +25,13 @@ INC=-I./include
  BINDIR=.
  rm=rm -f
 #Give .o files to create
-OBJ=$(OBJDIR)/main.o
+OBJ=$(OBJDIR)/main.o \
+$(OBJDIR)/date.o \
+$(OBJDIR)/person.o \
+$(OBJDIR)/patient.o \
+$(OBJDIR)/doctor.o \
+$(OBJDIR)/prescription.o \
+$(OBJDIR)/metting.o
 
 
 TARGET=$(BINDIR)/gestion_cabinet.exe
