@@ -16,6 +16,10 @@ protected:
     //setters
     void set_f_name(string name);
     void set_l_name(string name);
+    //void set_id();
+
+    void set_f_name();
+    void set_l_name();
     void set_id();
 
     //getters

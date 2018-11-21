@@ -29,11 +29,22 @@ void person::set_l_name(string nom)
     this->_last_name = nom;
 }
 
+// void person::set_id()
+// {
+//     //TODO récupérer les ID existants dans les fichiers et en créer un nouveau
+// }
+void person::set_f_name()
+{
+    std::cin >> _first_name;
+}
+void person::set_l_name()
+{
+    std::cin >> _last_name;
+}
 void person::set_id()
 {
-    //TODO récupérer les ID existants dans les fichiers et en créer un nouveau
+    std::cin >> _id;
 }
-
 //==============================================================================
 // Setters
 //==============================================================================
