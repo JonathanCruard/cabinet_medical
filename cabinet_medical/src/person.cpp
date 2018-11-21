@@ -15,6 +15,7 @@ person::person(string first_name, string last_name)
     set_f_name(first_name);
     set_l_name(last_name);
     set_id();
+
 }
 //==============================================================================
 // Setters
