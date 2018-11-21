@@ -5,11 +5,11 @@
 //==============================================================================
 date::date()
 {
-    set_year(0);
-    set_month(0);
-    set_day(0);
-    set_hour(0);
-    set_minute(0);
+    set_year();
+    set_month();
+    set_day();
+    set_hour();
+    set_minute();
 }
 
 date::date(unsigned year, unsigned month, unsigned day, unsigned hour, unsigned minute)
@@ -21,13 +21,22 @@ date::date(unsigned year, unsigned month, unsigned day, unsigned hour, unsigned 
     set_minute(minute);
 }
 
+date::date(date copy)
+{
+    set_year(copy.year);
+    set_month(copy.month);
+    set_day(copy.day);
+    set_hour(copy.hour);
+    set_minute(copy.minute);
+}
+
 //==============================================================================
 // Setters
 //==============================================================================
 
 void date::set_year(unsigned year)
 {
-    _year = year;
+    this._year = year;
 }
 
 void date::set_month(unsigned month)
@@ -42,12 +51,38 @@ void date::set_day(unsigned day)
 
 void date::set_hour(unsigned hour)
 {
-    return _hour;
+    _hour = hour;
 }
 
 void date::set_minute(unsigned minute)
 {
-    return _minute;
+    _minute = minute;
+}
+
+
+void date::set_year()
+{
+    std::cin >> _year;
+}
+
+void date::set_month()
+{
+    std::cin >> _month;
+}
+
+void date::set_day()
+{
+    std::cin >> _day;
+}
+
+void date::set_hour()
+{
+    std::cin >> _hour;
+}
+
+void date::set_minute()
+{
+    std::cin >> _minute;
 }
 
 //==============================================================================
