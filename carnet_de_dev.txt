@@ -18,3 +18,10 @@ Deadlines:
     tests sur jeux d essai
     rapport
     ouverture et aller plus loin
+
+
+Niveaux d aboutissement du pojet
+    - Diagramme UML + definition simple des classes
+    - Relationnel objet
+    - Gestion de l interface utilisateur via un main
+    - Gestion de  l import et export des fichiers
