@@ -37,20 +37,20 @@ void person::set_l_name(string nom)
 void person::set_f_name()
 {
     std::cout << "What is your first name? " << '\n';
-    std::cin >> _first_name;
+    std::cin >> this->_first_name;
 }
 void person::set_l_name()
 {
     std::cout << "What is your last name? " << '\n';
-    std::cin >> _last_name;
+    std::cin >> this->_last_name;
 }
 void person::set_id()
 {
     std::cout << "What is your id? " << '\n';
-    std::cin >> _id;
+    std::cin >> this->_id;
 }
 //==============================================================================
-// Setters
+// Getters
 //==============================================================================
 string person::get_f_name(string nom)
 {
