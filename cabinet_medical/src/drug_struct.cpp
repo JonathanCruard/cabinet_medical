@@ -18,6 +18,9 @@ drug_struct::drug_struct(string drug_name, float quantity, float posology)
     set_posology(posology);
 }
 
+//==============================================================================
+// Setters
+//==============================================================================
 void drug_struct::set_name(string drug_name)
 {
     this->_drug_name = drug_name;
