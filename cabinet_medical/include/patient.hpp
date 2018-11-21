@@ -25,6 +25,10 @@ private:
     void set_blood_group(string blood_group);
     void set_security_number(int security_number);
     void set_phone(int phone_number);
+
+    void set_blood_group();
+    void set_security_number();
+    void set_phone();
     //getters
     string get_blood_group();
     int get_security_number();
