@@ -19,7 +19,7 @@ private:
 //Variable
     string _blood_group;
     int _security_number;
-    int _telephon_number;
+    int _phone_number;
 //Class methods
     //setters
     void set_blood_group(string blood_group);

@@ -1,4 +1,4 @@
-#include "doctor.h"
+#include "doctor.hpp"
 
 class doctor : public person
 {
