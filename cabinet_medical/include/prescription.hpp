@@ -18,14 +18,13 @@ private:
     //setters
     void set_prescriptor(int prescriptor_id);
     void set_date();
-    void append_drug(drug_struct drug);
+    void append_drug();
 
+public:
     //getters
     int get_prescriptor();
     date get_date();
     drug_struct get_drugs();
-
-public:
     //constructors
     prescription(doctor doc);
 };

@@ -22,8 +22,18 @@ void prescription::set_date()
     date _prescription_date;
 }
 
-void append_drug(drug_struct drug)
+void prescription::append_drug()
 {
+    std::cout << "add drug to prescription? Yes(Y)" << '\n';
+    string add_drug;
+    std::cin >> add_drug;
+    while (add_drug=="Y")
+    {
+        drug_struct new_drug_struct;
+        _drugs.push_back(new_drug_struct);
+        std::cout << "add an other drug to prescription? Yes(Y)" << '\n';
+        std::cin >> add_drug;
+    }
 
 }
 //==============================================================================

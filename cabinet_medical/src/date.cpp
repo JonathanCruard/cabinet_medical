@@ -62,26 +62,31 @@ void date::set_minute(unsigned minute)
 
 void date::set_year()
 {
+    std::cout << "enter year (aaaa)" << '\n';
     std::cin >> _year;
 }
 
 void date::set_month()
 {
+    std::cout << "enter month (mm)" << '\n';
     std::cin >> _month;
 }
 
 void date::set_day()
 {
+    std::cout << "enter day (dd)" << '\n';
     std::cin >> _day;
 }
 
 void date::set_hour()
 {
+    std::cout << "enter hour (hh)" << '\n';
     std::cin >> _hour;
 }
 
 void date::set_minute()
 {
+    std::cout << "enter minute (mm)" << '\n';
     std::cin >> _minute;
 }
 
@@ -118,6 +123,8 @@ unsigned date::get_minute()
 //==============================================================================
 void date::display()
 {
+    std::cout << "date" << '\n';
     std::cout << _day << '/' << _month << '/' <<  _year << '\n';
+    std::cout << "heure" << '\n';
     std::cout << _hour << ':' << _minute << '\n';
 }

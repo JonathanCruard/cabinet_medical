@@ -18,6 +18,7 @@ void doctor::set_speciality(string speciality)
 
 void doctor::set_speciality()
 {
+    std::cout << "Enter the doctor speciality" << '\n';
     std::cin >> this->_speciality;
 }
 
