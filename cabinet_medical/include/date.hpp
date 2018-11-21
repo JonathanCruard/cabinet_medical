@@ -25,7 +25,7 @@ public:
     unsigned get_month();
     unsigned get_day();
     unsigned get_hour();
-    unsigned get_day();
+    unsigned get_minute();
     //displayers
     void display_date();
 
