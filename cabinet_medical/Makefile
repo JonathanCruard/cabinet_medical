@@ -30,6 +30,7 @@ $(OBJDIR)/meeting.o \
 $(OBJDIR)/doctor.o \
 $(OBJDIR)/person.o \
 $(OBJDIR)/patient.o \
+$(OBJDIR)/drug_struct.o \
 $(OBJDIR)/prescription.o \
 $(OBJDIR)/date.o
 
@@ -79,11 +80,18 @@ $(OBJDIR)/date.o: ./$(SRCDIR)/date.cpp
 	@$(CXX) $@ -c $< $(CXXFLAGS)
 	@echo "Compiled date.o"
 #---------------------
-# perscription
+# prescription
 #---------------------
 $(OBJDIR)/prescription.o: ./$(SRCDIR)/prescription.cpp
 	@$(CXX) $@ -c $< $(CXXFLAGS)
 	@echo "Compiled prescription.o"
+
+#---------------------
+# drug_struct
+#---------------------
+$(OBJDIR)/drug_struct.o: ./$(SRCDIR)/drug_struct.cpp
+	@$(CXX) $@ -c $< $(CXXFLAGS)
+	@echo "Compiled drug_struct.o"
 
 
 #---------------------

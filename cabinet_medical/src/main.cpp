@@ -9,8 +9,7 @@ using namespace std;
 #include "global.hpp"
 #include "date.hpp"
 
-int main() 
+int main()
 {
-    cout << "Hello, World!";
-    return 0;
+
 }

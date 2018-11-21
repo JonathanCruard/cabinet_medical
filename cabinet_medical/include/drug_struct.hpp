@@ -13,8 +13,12 @@ private:
 //class methods
     //setters
     void set_name(string nom);
-    void set_quantity(float quant);
+    void set_quantity(float quantity);
     void set_posology(float posology);
+
+    void set_name();
+    void set_quantity();
+    void set_posology();
     //getters
     string get_name();
     float get_quantity();
