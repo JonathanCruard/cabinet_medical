@@ -12,11 +12,7 @@
 
 
 # Give path of .hpp files
-INC=-I./include \
- -I./include/parsing \
- -I./include/statistics \
- -I./include/tools \
- -I./include/smmb_aco
+INC=-I./include
 
 # Save compiler call
  CXX=g++ -o
@@ -46,6 +42,42 @@ $(TARGET): $(OBJ)
 $(OBJDIR)/main.o: ./$(SRCDIR)/main.cpp
 	@$(CXX) $@ -c $< $(CXXFLAGS)
 	@echo "Compiled main.o"
+#---------------------
+# Person
+#---------------------
+$(OBJDIR)/person.o: ./$(SRCDIR)/person.cpp
+	@$(CXX) $@ -c $< $(CXXFLAGS)
+	@echo "Compiled person.o"
+#---------------------
+# doctor
+#---------------------
+$(OBJDIR)/doctor.o: ./$(SRCDIR)/doctor.cpp
+	@$(CXX) $@ -c $< $(CXXFLAGS)
+	@echo "Compiled doctor.o"
+#---------------------
+# patient
+#---------------------
+$(OBJDIR)/patient.o: ./$(SRCDIR)/patient.cpp
+	@$(CXX) $@ -c $< $(CXXFLAGS)
+	@echo "Compiled patient.o"
+#---------------------
+# meeting
+#---------------------
+$(OBJDIR)/meeting.o: ./$(SRCDIR)/meeting.cpp
+	@$(CXX) $@ -c $< $(CXXFLAGS)
+	@echo "Compiled meeting.o"
+#---------------------
+# date
+#---------------------
+$(OBJDIR)/date.o: ./$(SRCDIR)/date.cpp
+	@$(CXX) $@ -c $< $(CXXFLAGS)
+	@echo "Compiled date.o"
+#---------------------
+# perscription
+#---------------------
+$(OBJDIR)/perscription.o: ./$(SRCDIR)/perscription.cpp
+	@$(CXX) $@ -c $< $(CXXFLAGS)
+	@echo "Compiled perscription.o"
 
 
 #---------------------
