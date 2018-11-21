@@ -22,7 +22,7 @@ private:
     //setters
     void set_speciality(string speciality);
     //getters
-    unsigned int get_speciality();
+    string get_speciality();
 };
 
 
