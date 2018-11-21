@@ -33,7 +33,7 @@ void meeting::set_meeting_date()
 void meeting::set_object()
 {
     std::cout << "What is meeting's object?" << '\n';
-    std::cin >> _object;
+    std::cin >> this->_object;
 }
 
 
