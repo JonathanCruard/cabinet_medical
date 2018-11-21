@@ -11,5 +11,7 @@ using namespace std;
 
 int main()
 {
-
+    patient pati("Ab",12, 15);
+    string blood_group = pati.get_blood_group();
+    std::cout << blood_group << '\n';
 }
