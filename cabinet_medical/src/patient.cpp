@@ -36,17 +36,17 @@ void patient::set_phone(int phone_number)
 void patient::set_blood_group()
 {
     std::cout << "Enter your blood_group" << '\n';
-    std::cin >> _blood_group;
+    std::cin >> this->_blood_group;
 }
 void patient::set_security_number()
 {
     std::cout << "Enter your security_number" << '\n';
-    std::cin >> _security_number;
+    std::cin >> this->_security_number;
 }
 void patient::set_phone()
 {
     std::cout << "Enter your phone" << '\n';
-    std::cin >> _phone_number;
+    std::cin >> this->_phone_number;
 }
 //==========================================================================
 // Getters
