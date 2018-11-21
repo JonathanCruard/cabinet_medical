@@ -5,8 +5,12 @@
 //==============================================================================
 person::person()
 {
+    std::cout << "person" << '\n';
+    std::cout << "fist name" << '\n';
     set_f_name();
+    std::cout << "last name" << '\n';
     set_l_name();
+    std::cout << "id inited" << '\n';
     set_id();
 }
 
