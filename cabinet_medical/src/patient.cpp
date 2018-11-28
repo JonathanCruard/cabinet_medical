@@ -40,7 +40,7 @@ void patient::set_blood_group()
     while (cin.fail())
     {
         cin.clear();
-        cin.ignore();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
         std::cin >> this->_blood_group;
     }
@@ -52,7 +52,7 @@ void patient::set_security_number()
     while (cin.fail())
     {
         cin.clear();
-        cin.ignore();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
         std::cin >> this->_security_number;
     }
@@ -64,7 +64,7 @@ void patient::set_phone()
     while (cin.fail())
     {
         cin.clear();
-        cin.ignore();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
         std::cin >> this->_phone_number;
     }

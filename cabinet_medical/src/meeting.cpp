@@ -37,7 +37,7 @@ void meeting::set_object()
     while (cin.fail())
     {
         cin.clear();
-        cin.ignore();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
         std::cin >> this->_object;
     }

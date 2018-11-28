@@ -170,7 +170,7 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
 
 void save_and_quit(vector<patient> & patient_list, vector<doctor> & doctor_list, vector<meeting> & meeting_list)
 {
-    json_read();
+    // json_read();
 }
 
 

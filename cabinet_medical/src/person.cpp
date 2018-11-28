@@ -41,7 +41,7 @@ void person::set_f_name()
     while (cin.fail())
     {
         cin.clear();
-        cin.ignore();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
         std::cin >> this->_first_name;
     }
@@ -53,7 +53,7 @@ void person::set_l_name()
     while (cin.fail())
     {
         cin.clear();
-        cin.ignore();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
         std::cin >> this->_last_name;
     }
@@ -65,7 +65,7 @@ void person::set_id()
     while (cin.fail())
     {
         cin.clear();
-        cin.ignore();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
         std::cin >> this->_id;
     }

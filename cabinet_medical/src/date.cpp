@@ -67,7 +67,7 @@ void date::set_year()
     while (cin.fail())
     {
         cin.clear();
-        cin.ignore();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
         std::cin >> this->_year;
     }
@@ -80,7 +80,7 @@ void date::set_month()
     while (cin.fail())
     {
         cin.clear();
-        cin.ignore();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
         std::cin >> this->_month;
     }
@@ -93,7 +93,7 @@ void date::set_day()
     while (cin.fail())
     {
         cin.clear();
-        cin.ignore();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
         std::cin >> this->_day;
     }
@@ -106,7 +106,7 @@ void date::set_hour()
     while (cin.fail())
     {
         cin.clear();
-        cin.ignore();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
         std::cin >> this->_hour;
     }
@@ -119,7 +119,7 @@ void date::set_minute()
     while (cin.fail())
     {
         cin.clear();
-        cin.ignore();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
         std::cin >> this->_minute;
     }
