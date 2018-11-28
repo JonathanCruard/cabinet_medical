@@ -12,7 +12,8 @@
 
 
 # Give path of .hpp files
-INC=-I./include
+INC=-I./include \
+-I./include/json
 
 # Save compiler call
  CXX=g++ -o
@@ -30,8 +31,10 @@ $(OBJDIR)/meeting.o \
 $(OBJDIR)/doctor.o \
 $(OBJDIR)/person.o \
 $(OBJDIR)/patient.o \
-$(OBJDIR)/drug_struct.o \
 $(OBJDIR)/prescription.o \
+$(OBJDIR)/jsoncpp.o \
+$(OBJDIR)/json_gestion.o \
+$(OBJDIR)/drug_struct.o \
 $(OBJDIR)/date.o
 
 
@@ -85,6 +88,20 @@ $(OBJDIR)/date.o: ./$(SRCDIR)/date.cpp
 $(OBJDIR)/prescription.o: ./$(SRCDIR)/prescription.cpp
 	@$(CXX) $@ -c $< $(CXXFLAGS)
 	@echo "Compiled prescription.o"
+
+#---------------------
+# jsoncpp
+#---------------------
+$(OBJDIR)/jsoncpp.o: ./$(SRCDIR)/json/jsoncpp.cpp
+	@$(CXX) $@ -c $< $(CXXFLAGS)
+	@echo "Compiled jsoncpp.o"
+
+#---------------------
+# json_gestion
+#---------------------
+$(OBJDIR)/json_gestion.o: ./$(SRCDIR)/json_gestion.cpp
+	@$(CXX) $@ -c $< $(CXXFLAGS)
+	@echo "Compiled json_gestion.o"
 
 #---------------------
 # drug_struct
