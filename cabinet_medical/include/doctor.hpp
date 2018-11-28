@@ -14,6 +14,9 @@ public:
     //contructors
     doctor();
     doctor(string speciality);
+    //displayer
+    void display();
+
 
 private:
 //Variable

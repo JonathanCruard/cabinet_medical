@@ -27,3 +27,11 @@ string doctor::get_speciality()
 {
     return _speciality;
 }
+
+void doctor::display()
+{
+    std::cout << "First Name  : " << _first_name << '\n';
+    std::cout << "Last Name  : " << _last_name << '\n';
+    std::cout << "ID  : " << _id << '\n';
+    std::cout << "Speciality : " << _speciality << '\n';
+}
