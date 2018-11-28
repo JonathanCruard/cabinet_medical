@@ -2,11 +2,16 @@
 #include <json/json.h>
 #include <fstream>
 
+json_gestion::json_gestion()
+{
+    this->_json_file = "./data/test.json";
+}
+
 void json_gestion::json_read()
 {
     Json::Value root;   // will contains the root value after parsing.
     Json::Reader reader;
-    ifstream ifile("./data/test.json");
+    ifstream ifile(_json_file);
     bool parsingSuccessful = reader.parse( ifile, root );
 
     if (parsingSuccessful) {
