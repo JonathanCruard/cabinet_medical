@@ -63,31 +63,66 @@ void date::set_minute(unsigned minute)
 void date::set_year()
 {
     std::cout << "enter year (aaaa)" << '\n';
-    std::cin >> _year;
+    std::cin >> this->_year;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_year;
+    }
 }
 
 void date::set_month()
 {
     std::cout << "enter month (mm)" << '\n';
-    std::cin >> _month;
+    std::cin >> this->_month;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_month;
+    }
 }
 
 void date::set_day()
 {
     std::cout << "enter day (dd)" << '\n';
-    std::cin >> _day;
+    std::cin >> this->_day;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_day;
+    }
 }
 
 void date::set_hour()
 {
     std::cout << "enter hour (hh)" << '\n';
-    std::cin >> _hour;
+    std::cin >> this->_hour;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_hour;
+    }
 }
 
 void date::set_minute()
 {
     std::cout << "enter minute (mm)" << '\n';
-    std::cin >> _minute;
+    std::cin >> this->_minute;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_minute;
+    }
 }
 
 //==============================================================================

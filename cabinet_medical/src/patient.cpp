@@ -37,16 +37,37 @@ void patient::set_blood_group()
 {
     std::cout << "Enter your blood_group" << '\n';
     std::cin >> this->_blood_group;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_blood_group;
+    }
 }
 void patient::set_security_number()
 {
     std::cout << "Enter your security_number" << '\n';
     std::cin >> this->_security_number;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_security_number;
+    }
 }
 void patient::set_phone()
 {
     std::cout << "Enter your phone" << '\n';
     std::cin >> this->_phone_number;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_phone_number;
+    }
 }
 
 void patient::add_prescription()

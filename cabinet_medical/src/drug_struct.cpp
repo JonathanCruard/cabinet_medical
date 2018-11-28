@@ -37,17 +37,38 @@ void drug_struct::set_posology(string posology)
 void drug_struct::set_name()
 {
     std::cout << "Enter drug name" << '\n';
-    std::cin >> _drug_name;
+    std::cin >> this->_drug_name;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_drug_name;
+    }
 }
 void drug_struct::set_quantity()
 {
     std::cout << "Enter quantity" << '\n';
-    std::cin >> _quantity;
+    std::cin >> this->_quantity;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_quantity;
+    }
 }
 void drug_struct::set_posology()
 {
     std::cout << "Enter posology" << '\n';
-    std::cin >> _posology;
+    std::cin >> this->_posology;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_posology;
+    }
 }
 
 //==============================================================================

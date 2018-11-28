@@ -20,6 +20,13 @@ void doctor::set_speciality()
 {
     std::cout << "Enter the doctor speciality" << '\n';
     std::cin >> this->_speciality;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_speciality;
+    }
 }
 
 //getters

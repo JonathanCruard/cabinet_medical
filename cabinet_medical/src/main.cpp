@@ -10,7 +10,7 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
 {
     int current_patient_id = -1;
     int choice = 9999;
-    while (choice != 0)
+    while (true)
     {
         std::cout << "************* Welcome to Arkham Asylum *************" << '\n';
         std::cout << "Patient menu"<< '\n';
@@ -92,7 +92,7 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
 {
     int current_doctor_id = -1;
     int choice = 9999;
-    while (choice != 0)
+    while (true)
     {
         std::cout << "************* Welcome to Arkham Asylum *************" << '\n';
         std::cout << "Doctor menu"<< '\n';

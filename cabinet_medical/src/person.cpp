@@ -38,16 +38,37 @@ void person::set_f_name()
 {
     std::cout << "What is first name? " << '\n';
     std::cin >> this->_first_name;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_first_name;
+    }
 }
 void person::set_l_name()
 {
     std::cout << "What is last name? " << '\n';
     std::cin >> this->_last_name;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_last_name;
+    }
 }
 void person::set_id()
 {
     std::cout << "What is your id? " << '\n';
     std::cin >> this->_id;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_id;
+    }
 }
 //==============================================================================
 // Getters

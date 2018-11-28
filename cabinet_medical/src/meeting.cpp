@@ -34,6 +34,13 @@ void meeting::set_object()
 {
     std::cout << "What is meeting's object?" << '\n';
     std::cin >> this->_object;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore();
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_object;
+    }
 }
 
 
