@@ -15,7 +15,7 @@ public:
     doctor();
     doctor(string speciality);
     //displayer
-    void display();
+    void display_doctor();
 
 
 private:

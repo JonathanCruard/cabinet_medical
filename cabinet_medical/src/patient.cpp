@@ -74,11 +74,9 @@ int patient::get_phone()
 //==============================================================================
 // Displayers
 //==============================================================================
-void patient::display()
+void patient::display_patient()
 {
-    std::cout << "First Name  : " << _first_name << '\n';
-    std::cout << "Last Name  : " << _last_name << '\n';
-    std::cout << "ID  : " << _id << '\n';
+    display();
     std::cout << "Blood Group : " << _blood_group << '\n';
     std::cout << "Security number : " << _security_number << '\n';
     std::cout << "Phone number : " << _phone_number << '\n';

@@ -29,7 +29,7 @@ public:
     int get_phone();
 
     //displayer
-    void display();
+    void display_patient();
 
 
 private:
