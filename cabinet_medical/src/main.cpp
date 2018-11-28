@@ -53,7 +53,6 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
             std::cout << "3 : schedule meeting" << '\n';
             std::cout << "4 : prescript" << '\n';
             std::cout << "5 : view informations" << '\n';
-            std::cout << "6 : delete patient" << '\n';
         }
         std::cout << "0 : main menu" << '\n';
         std::cin >> choice;
@@ -91,12 +90,6 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
                 case 4: patient_list[current_patient_id].add_prescription();
                 break;
                 case 5: patient_list[current_patient_id].display();
-                break;
-                case 6:
-                {
-                    patient_list.remove(current_patient_id);
-                    current_patient_id = -1;
-                }
                 break;
                 default:
                 break;

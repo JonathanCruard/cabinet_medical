@@ -26,15 +26,15 @@ INC=-I./include \
  BINDIR=.
  rm=rm -f
 #Give .o files to create
-OBJ=$(OBJDIR)/main.o \
+OBJ=$(OBJDIR)/drug_struct.o \
 $(OBJDIR)/meeting.o \
 $(OBJDIR)/doctor.o \
 $(OBJDIR)/person.o \
 $(OBJDIR)/patient.o \
 $(OBJDIR)/prescription.o \
 $(OBJDIR)/jsoncpp.o \
+$(OBJDIR)/main.o \
 $(OBJDIR)/json_gestion.o \
-$(OBJDIR)/drug_struct.o \
 $(OBJDIR)/date.o
 
 

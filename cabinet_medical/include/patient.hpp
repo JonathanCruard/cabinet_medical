@@ -4,6 +4,7 @@
 #include "person.hpp"
 #include "global.hpp"
 #include "date.hpp"
+#include "prescription.hpp"
 
 class patient : public person
 {
@@ -25,7 +26,7 @@ private:
     string _blood_group;
     int _security_number;
     int _phone_number;
-    vector<prescription> _prescription_list; 
+    vector<prescription> _prescription_list;
 //Class methods
     //setters
     void set_blood_group(string blood_group);
@@ -35,8 +36,7 @@ private:
     void set_blood_group();
     void set_security_number();
     void set_phone();
-
-
+    void add_prescription();
 };
 
 

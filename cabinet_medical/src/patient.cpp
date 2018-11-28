@@ -9,8 +9,8 @@ patient::patient() : person()
     set_blood_group();
     set_security_number();
     set_phone();
-
 }
+
 patient::patient(string blood_group, int security_number, int phone_number) : person()
 {
     set_blood_group(blood_group);
@@ -48,6 +48,13 @@ void patient::set_phone()
     std::cout << "Enter your phone" << '\n';
     std::cin >> this->_phone_number;
 }
+
+void patient::add_prescription()
+{
+    prescription new_prescription;
+    this->_prescription_list.push_back(new_prescription);
+}
+
 //==========================================================================
 // Getters
 //==========================================================================

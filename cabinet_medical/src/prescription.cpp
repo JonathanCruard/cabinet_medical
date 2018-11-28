@@ -3,9 +3,9 @@
 //==============================================================================
 // Constructors
 //==============================================================================
-prescription::prescription(doctor doc)
+prescription::prescription()
 {
-    set_prescriptor(doc.get_id());
+    set_prescriptor();
     set_date();
     append_drug();
 }
@@ -13,9 +13,9 @@ prescription::prescription(doctor doc)
 //==============================================================================
 // Setters
 //==============================================================================
-void prescription::set_prescriptor(int prescriptor_id)
+void prescription::set_prescriptor()
 {
-    this->_prescriptor = prescriptor_id;
+    std::cin >> _prescriptor;
 }
 
 void prescription::set_date()
