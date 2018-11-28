@@ -1,9 +1,9 @@
 #include "patient.hpp"
 #include "person.hpp"
 
-//==========================================================================
+//==============================================================================
 //contructors
-//==========================================================================
+//==============================================================================
 patient::patient() : person()
 {
     set_blood_group();
@@ -17,10 +17,9 @@ patient::patient(string blood_group, int security_number, int phone_number) : pe
     set_security_number(security_number);
     set_phone(phone_number);
 }
-
-//==========================================================================
+//==============================================================================
 // Setters
-//==========================================================================
+//==============================================================================
 void patient::set_blood_group(string blood_group)
 {
     this->_blood_group = blood_group;
@@ -56,9 +55,9 @@ void patient::add_prescription()
     this->_prescription_list.push_back(new_prescription);
 }
 
-//==========================================================================
+//==============================================================================
 // Getters
-//==========================================================================
+//==============================================================================
 string patient::get_blood_group()
 {
     return _blood_group;
@@ -70,4 +69,17 @@ int patient::get_security_number()
 int patient::get_phone()
 {
     return _phone_number;
+}
+
+//==============================================================================
+// Displayers
+//==============================================================================
+void patient::display()
+{
+    std::cout << "First Name  : " << _first_name << '\n';
+    std::cout << "Last Name  : " << _last_name << '\n';
+    std::cout << "ID  : " << _id << '\n';
+    std::cout << "Blood Group : " << _blood_group << '\n';
+    std::cout << "Security number : " << _security_number << '\n';
+    std::cout << "Phone number : " << _phone_number << '\n';
 }

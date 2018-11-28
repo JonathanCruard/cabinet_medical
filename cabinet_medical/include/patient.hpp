@@ -28,6 +28,9 @@ public:
     int get_security_number();
     int get_phone();
 
+    //displayer
+    void display();
+
 
 private:
 //Variable
