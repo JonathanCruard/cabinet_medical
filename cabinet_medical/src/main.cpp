@@ -168,8 +168,10 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
 }
 
 
-
-
+void save_and_quit(vector<patient> & patient_list, vector<doctor> & doctor_list, vector<meeting> & meeting_list)
+{
+    json_read();
+}
 
 
 
@@ -190,8 +192,8 @@ int main()
 
         switch (choice)
         {
-            // case 0: save_and_quit();
-            //     break;
+            case 0: save_and_quit(patient_list, doctor_list, meeting_list);
+                break;
             case 1: patient_menu(patient_list, doctor_list, meeting_list);
                 break;
             case 2: doctor_menu(patient_list, doctor_list, meeting_list);
