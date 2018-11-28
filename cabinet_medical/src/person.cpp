@@ -36,12 +36,12 @@ void person::set_l_name(string nom)
 // }
 void person::set_f_name()
 {
-    std::cout << "What is your first name? " << '\n';
+    std::cout << "What is first name? " << '\n';
     std::cin >> this->_first_name;
 }
 void person::set_l_name()
 {
-    std::cout << "What is your last name? " << '\n';
+    std::cout << "What is last name? " << '\n';
     std::cin >> this->_last_name;
 }
 void person::set_id()
@@ -72,7 +72,7 @@ unsigned person::get_id()
 //==============================================================================
 void person::display()
 {
-    std::cout << _first_name << '\n';
-    std::cout << _last_name << '\n';
-    std::cout << _id << '\n';
+    std::cout << "First Name  : " << _first_name << '\n';
+    std::cout << "Last Name  : " << _last_name << '\n';
+    std::cout << "ID  : " << _id << '\n';
 }
