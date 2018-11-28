@@ -53,15 +53,25 @@ void drug_struct::set_posology()
 //==============================================================================
 // Getters
 //==============================================================================
-void drug_struct::get_name()
+string drug_struct::get_name()
 {
     return _drug_name;
 }
-void drug_struct::get_quantity()
+string drug_struct::get_quantity()
 {
     return _quantity;
 }
-void drug_struct::get_posology()
+string drug_struct::get_posology()
 {
     return _posology;
+}
+
+//==============================================================================
+// Displayers
+//==============================================================================
+void drug_struct::display()
+{
+    std::cout << "Drug name : " << _drug_name << '\n';
+    std::cout << "Quantity : " << _quantity << '\n';
+    std::cout << "Posology : " << _posology << '\n';
 }

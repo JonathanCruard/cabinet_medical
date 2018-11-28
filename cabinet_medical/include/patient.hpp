@@ -25,6 +25,7 @@ private:
     string _blood_group;
     int _security_number;
     int _phone_number;
+    vector<prescription> _prescription_list; 
 //Class methods
     //setters
     void set_blood_group(string blood_group);
