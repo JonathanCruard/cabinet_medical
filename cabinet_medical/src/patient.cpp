@@ -17,6 +17,7 @@ patient::patient(string blood_group, int security_number, int phone_number) : pe
     set_security_number(security_number);
     set_phone(phone_number);
 }
+
 //==========================================================================
 // Setters
 //==========================================================================

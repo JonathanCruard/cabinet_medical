@@ -10,10 +10,18 @@ class patient : public person
 {
 public:
 //Methods
+    //setters
+    void set_blood_group(string blood_group);
+    void set_security_number(int security_number);
+    void set_phone(int phone_number);
+
+    void set_blood_group();
+    void set_security_number();
+    void set_phone();
+    void add_prescription();
     //contructors
     patient();
     patient(string blood_group, int security_number, int telephon_number);
-
 
     //getters
     string get_blood_group();
@@ -27,16 +35,6 @@ private:
     int _security_number;
     int _phone_number;
     vector<prescription> _prescription_list;
-//Class methods
-    //setters
-    void set_blood_group(string blood_group);
-    void set_security_number(int security_number);
-    void set_phone(int phone_number);
-
-    void set_blood_group();
-    void set_security_number();
-    void set_phone();
-    void add_prescription();
 };
 
 
