@@ -48,26 +48,26 @@ void drug_struct::set_name()
 }
 void drug_struct::set_quantity()
 {
-    std::cout << "Enter quantity" << '\n';
-    std::cin >> this->_quantity;
+    cout << "Enter quantity" << '\n';
+    cin >> this->_quantity;
     while (cin.fail())
     {
         cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
-        std::cin >> this->_quantity;
+        cin >> this->_quantity;
     }
 }
 void drug_struct::set_posology()
 {
-    std::cout << "Enter posology" << '\n';
-    std::cin >> this->_posology;
+    cout << "Enter posology" << '\n';
+    cin >> this->_posology;
     while (cin.fail())
     {
         cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
-        std::cin >> this->_posology;
+        cin >> this->_posology;
     }
 }
 

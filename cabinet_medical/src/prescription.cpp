@@ -15,25 +15,27 @@ prescription::prescription()
 //==============================================================================
 void prescription::set_prescriptor()
 {
-    std::cin >> _prescriptor;
+    cout << "Enter Prescriptor ID" << '\n';
+    cin >> this->_prescriptor;
 }
 
 void prescription::set_date()
 {
+    cout << "Enter prescription date" << '\n';
     date _prescription_date;
 }
 
 void prescription::append_drug()
 {
-    std::cout << "add drug to prescription? Yes(Y)" << '\n';
+    cout << "add drug to prescription? Yes(Y)" << '\n';
     string add_drug;
-    std::cin >> add_drug;
+    cin >> add_drug;
     while (add_drug=="Y")
     {
         drug_struct new_drug;
         _drugs.push_back(new_drug);
-        std::cout << "add an other drug to prescription? Yes(Y)" << '\n';
-        std::cin >> add_drug;
+        cout << "add an other drug to prescription? Yes(Y)" << '\n';
+        cin >> add_drug;
     }
 
 }
@@ -42,10 +44,10 @@ void prescription::append_drug()
 //==============================================================================
 void prescription::display()
 {
-    std::cout << "Prescriptor ID : " << _prescriptor << '\n';
-    std::cout << "Date : ";
+    cout << "Prescriptor ID : " << _prescriptor << '\n';
+    cout << "Date : ";
     _prescription_date.display();
-    std::cout << "Drug list : " << '\n';
+    cout << "Drug list : " << '\n';
     for (auto t : _drugs) {
         t.display();
     }

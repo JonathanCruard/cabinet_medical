@@ -73,6 +73,7 @@ void patient::set_phone()
 void patient::add_prescription()
 {
     prescription new_prescription;
+    std::cout << "/* message */" << '\n';
     this->_prescription_list.push_back(new_prescription);
 }
 
