@@ -1,4 +1,8 @@
 #include "json_gestion.hpp"
+#include "person.hpp"
+#include "patient.hpp"
+#include "doctor.hpp"
+#include "meeting.hpp"
 #include <json/json.h>
 #include <fstream>
 
@@ -7,7 +11,7 @@ json_gestion::json_gestion()
     this->_json_file = "./data/data.json";
 }
 
-void json_gestion::json_read()
+void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & doctor_list, vector<meeting> & meeting_list)
 {
     Json::Value root;   // will contains the root value after parsing.
     Json::Reader reader;
@@ -27,11 +31,12 @@ void json_gestion::json_read()
                 Json::Value lname = patient[index]["lname"];
                 Json::Value phone_number = patient[index]["phone_number"];
                 Json::Value security_number = patient[index]["security_number"];
-                cout << "fname : " << fname.asString() << endl;
-                cout << "lname : " << lname.asString() << endl;
-                cout << "blood_group : " << blood_group.asString() << endl;
-                cout << "phone_number : " << phone_number.asInt() << endl;
-                cout << "security_number : " << security_number.asInt() << endl;
+                patient pat(blood_group.asString(), ) (fname.asString(), lname.asString())
+                patient_list[index].set_f_name();
+                patient_list[index].set_l_name();
+                patient_list[index].set_blood_group();
+                patient_list[index].set_phone(phone_number.asInt());
+                patient_list[index].set_security_number(security_number.asInt());
             }
         }
         Json::Value doctor = root["doctor"];
@@ -51,16 +56,22 @@ void json_gestion::json_read()
     else
         {cout << "json is not in correct format" << endl;}
 }
-void json_gestion::json_write()
+void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & doctor_list, vector<meeting> & meeting_list)
 {
-    // will contains the root value after parsing.
-    Json::Value root;
-    Json::StyledWriter writer;
-    // Make a new JSON document for the configuration. Preserve original comments.
-    std::string outputConfig = writer.write( root );
-    // You can also use streams.  This will put the contents of any JSON
-    // stream at a particular sub-value, if you'd like.
-    std::cin >> root["subtree"];
-    // And you can write to a stream, using the StyledWriter automatically.
-    std::cout << root;
+    Json::Value patient;
+    Json::Value patient_value;
+    for (size_t index_patient = 0; index_patient < patient_list.size(); index_patient++)
+    {
+        patient_value["blood_group"] = patient_list[index_patient].get_blood_group();
+        patient_value["id"] = patient_list[index_patient].get_id();
+        patient_value["fname"] = patient_list[index_patient].get_f_name();
+        patient_value["lname"] = patient_list[index_patient].get_l_name();
+        patient_value["security_number"] = patient_list[index_patient].get_security_number();
+        patient_value["phone"] = patient_list[index_patient].get_phone();
+    }
+    std::cout << patient_value << '\n';
+    // Configure the Builder, then ...
+    Json::StreamWriterBuilder wbuilder;
+
+    // std::string out1 = Json::writeString(wbuilder, val);
 }

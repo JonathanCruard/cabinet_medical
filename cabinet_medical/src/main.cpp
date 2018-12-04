@@ -175,7 +175,8 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
 void save_and_quit(vector<patient> & patient_list, vector<doctor> & doctor_list, vector<meeting> & meeting_list)
 {
     json_gestion json;
-    json.json_read();
+    json.json_read(patient_list, doctor_list, meeting_list);
+    json.json_write(patient_list, doctor_list, meeting_list);
 }
 
 
