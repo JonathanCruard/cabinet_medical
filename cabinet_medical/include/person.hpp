@@ -21,7 +21,7 @@ protected:
     //==========================================================================
     void set_f_name(string name);
     void set_l_name(string name);
-    //void set_id();
+    void set_id(int id);
 
     void set_f_name();
     void set_l_name();
@@ -37,7 +37,7 @@ public:
     //constructors
     //==========================================================================
     person();
-    person(string first_name, string last_name);
+    person(string first_name, string last_name, int id);
 
     //==========================================================================
     //Getters

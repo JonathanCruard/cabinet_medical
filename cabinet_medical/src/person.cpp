@@ -30,6 +30,10 @@ void person::set_l_name(string nom)
     this->_last_name = nom;
 }
 
+void person::set_id(int id) {
+    this->_id = id;
+}
+
 // void person::set_id()
 // {
 //     //TODO récupérer les ID existants dans les fichiers et en créer un nouveau

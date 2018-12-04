@@ -31,12 +31,8 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                 Json::Value lname = patient[index]["lname"];
                 Json::Value phone_number = patient[index]["phone_number"];
                 Json::Value security_number = patient[index]["security_number"];
-                patient pat(blood_group.asString(), ) (fname.asString(), lname.asString())
-                patient_list[index].set_f_name();
-                patient_list[index].set_l_name();
-                patient_list[index].set_blood_group();
-                patient_list[index].set_phone(phone_number.asInt());
-                patient_list[index].set_security_number(security_number.asInt());
+                patient pat(blood_group.asString(), security_number.asInt(), phone_number.asInt()) (fname.asString(), lname.asString())
+                patient_list.push_back(pat);
             }
         }
         Json::Value doctor = root["doctor"];
