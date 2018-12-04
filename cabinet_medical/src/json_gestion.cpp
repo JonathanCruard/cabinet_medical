@@ -13,27 +13,20 @@ void json_gestion::json_read()
     Json::Reader reader;
     ifstream ifile(_json_file);
     bool parsingSuccessful = reader.parse( ifile, root );
-    std::cout << parsingSuccessful << '\n';
 
     if (parsingSuccessful)
     {
-
-        const Json::Value patient = root.get("patient", "");
-        if (patient.isObject()) {
-
-            Json::Value fname = patient.get("fname", "");
-            Json::Value lname = patient.get("lname", "");
-            Json::Value blood_group = patient.get("blood_group", "");
-            Json::Value phone_number = patient.get("phone_number", "");
-            Json::Value security_number = patient.get("security_number", "");
-            cout << "fname : " << fname.asString() << endl;
-            cout << "lname : " << lname.asString() << endl;
-            cout << "blood_group : " << blood_group.asString() << endl;
-            cout << "phone_number : " << phone_number.asInt() << endl;
-            cout << "security_number : " << security_number.asInt() << endl;
-        } else {
-            cout << "no object type" << endl;
-        }
+        Json::Value patient = root["patient"];
+        Json::Value blood_group = patient[0]["blood_group"];
+        Json::Value fname = patient[0]["fname"];
+        Json::Value lname = patient[0]["lname"];
+        Json::Value phone_number = patient[0]["phone_number"];
+        Json::Value security_number = patient[0]["security_number"];
+        cout << "fname : " << fname.asString() << endl;
+        cout << "lname : " << lname.asString() << endl;
+        cout << "blood_group : " << blood_group.asString() << endl;
+        cout << "phone_number : " << phone_number.asInt() << endl;
+        cout << "security_number : " << security_number.asInt() << endl;
     }
     else
         {cout << "json is not correct format" << endl;}
