@@ -43,6 +43,7 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
                     for (auto p : patient_list)
                     {
                         std::cout << "Patient # : " << pnum << '\n';
+                        pnum++;
                         p.display();
                     }
                     std::cout << "Enter the patient #" << '\n';
@@ -72,6 +73,7 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
                     for (auto p : patient_list)
                     {
                         std::cout << "Patient # : " << pnum << '\n';
+                        pnum++;
                         p.display();
                     }
                     std::cout << "Enter the chosen patient #" << '\n';
@@ -127,6 +129,7 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
                     for (auto p : doctor_list)
                     {
                         std::cout << "Doctor # : " << pnum << '\n';
+                        pnum++;
                         p.display();
                     }
                     std::cout << "Enter the doctor #" << '\n';
@@ -156,6 +159,7 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
                     for (auto p : doctor_list)
                     {
                         std::cout << "Doctor # : " << pnum << '\n';
+                        pnum++;
                         p.display();
                     }
                     std::cout << "Enter the chosen doctor #" << '\n';
@@ -175,7 +179,6 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
 void save_and_quit(vector<patient> & patient_list, vector<doctor> & doctor_list, vector<meeting> & meeting_list)
 {
     json_gestion json;
-    json.json_read(patient_list, doctor_list, meeting_list);
     json.json_write(patient_list, doctor_list, meeting_list);
 }
 
@@ -186,6 +189,9 @@ int main()
     vector<patient> patient_list;
     vector<doctor> doctor_list;
     vector<meeting> meeting_list;
+    json_gestion json;
+    json.json_read(patient_list, doctor_list, meeting_list);
+
     int choice = 9999;
     while (choice != 0)
     {

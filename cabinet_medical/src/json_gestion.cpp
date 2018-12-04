@@ -1,10 +1,4 @@
 #include "json_gestion.hpp"
-#include "person.hpp"
-#include "patient.hpp"
-#include "doctor.hpp"
-#include "meeting.hpp"
-#include <json/json.h>
-#include <fstream>
 
 json_gestion::json_gestion()
 {
@@ -20,21 +14,24 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
 
     if (parsingSuccessful)
     {
-        Json::Value patient = root["patient"];
-        if (patient != NULL)
+        Json::Value patientdat = root["patient"];
+        if (patientdat != NULL)
         {
             // Iterate over the sequence elements.
-            for ( int index = 0; index < patient.size(); ++index)
+            for ( int index = 0; index < patientdat.size(); ++index)
             {
-                Json::Value blood_group = patient[index]["blood_group"];
-                Json::Value fname = patient[index]["fname"];
-                Json::Value lname = patient[index]["lname"];
-                Json::Value phone_number = patient[index]["phone_number"];
-                Json::Value security_number = patient[index]["security_number"];
-                Json::Value id = patient[index]["id"];
+                string blood_group = patientdat[index]["blood_group"].asString();
+                string fname = patientdat[index]["fname"].asString();
+                string lname = patientdat[index]["lname"].asString();
+                int phone_number = patientdat[index]["phone_number"].asInt();
+                int security_number = patientdat[index]["security_number"].asInt();
+                int id = patientdat[index]["id"].asInt();
 
-                patient patpat(blood_group.asString(), security_number.asInt(), phone_number.asInt(), fname.asString(), lname.asString(), id.asInt());
-                patient_list.push_back(pat);
+                patient test(blood_group, security_number, phone_number, fname, lname, id);
+
+                patient_list.push_back(test);
+                //
+                // patient_list.push_back(pat);
             }
         }
         Json::Value doctor = root["doctor"];

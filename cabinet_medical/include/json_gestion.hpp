@@ -2,6 +2,7 @@
 #define DEF_JSON_GESTION
 
 #include <json/json.h>
+#include <fstream>
 #include "person.hpp"
 #include "patient.hpp"
 #include "doctor.hpp"
