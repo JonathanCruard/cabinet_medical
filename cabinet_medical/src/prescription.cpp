@@ -3,10 +3,9 @@
 //==============================================================================
 // Constructors
 //==============================================================================
-prescription::prescription()
+prescription::prescription() : _prescription_date()
 {
     set_prescriptor();
-    set_date();
     append_drug();
 }
 
@@ -22,7 +21,8 @@ void prescription::set_prescriptor()
 void prescription::set_date()
 {
     cout << "Enter prescription date" << '\n';
-    date _prescription_date;
+    date dat_to_set;
+    this->_prescription_date = dat_to_set;
 }
 
 void prescription::append_drug()
@@ -37,7 +37,6 @@ void prescription::append_drug()
         cout << "add an other drug to prescription? Yes(Y)" << '\n';
         cin >> add_drug;
     }
-
 }
 //==============================================================================
 // Displayer

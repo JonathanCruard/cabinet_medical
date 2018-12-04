@@ -78,7 +78,10 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
                     std::cin >> current_patient_id;
                 }
                 break;
-                case 3: patient_list[current_patient_id].add_prescription();
+                case 3:
+                {
+                    patient_list[current_patient_id].add_prescription();
+                }
                 break;
                 case 4: patient_list[current_patient_id].display_patient();
                 break;
