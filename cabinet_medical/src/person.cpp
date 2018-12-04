@@ -10,11 +10,11 @@ person::person()
     set_id();
 }
 
-person::person(string first_name, string last_name)
+person::person(string first_name, string last_name, int id)
 {
     set_f_name(first_name);
     set_l_name(last_name);
-    set_id();
+    set_id(id);
 
 }
 //==============================================================================

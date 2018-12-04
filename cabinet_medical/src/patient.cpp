@@ -11,7 +11,7 @@ patient::patient() : person()
     set_phone();
 }
 
-patient::patient(string blood_group, int security_number, int phone_number) : person()
+patient::patient(string blood_group, int security_number, int phone_number) : person(first_name, string last_name, int id)
 {
     set_blood_group(blood_group);
     set_security_number(security_number);
