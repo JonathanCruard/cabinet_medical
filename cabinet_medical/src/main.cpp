@@ -5,6 +5,7 @@
 #include "prescription.hpp"
 #include "global.hpp"
 #include "date.hpp"
+#include "json_gestion.hpp"
 
 void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_list, vector<meeting> & meeting_list)
 {
@@ -170,7 +171,8 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
 
 void save_and_quit(vector<patient> & patient_list, vector<doctor> & doctor_list, vector<meeting> & meeting_list)
 {
-    // json_read();
+    // json_gestion json;
+    json_gestion::json_read();
 }
 
 

@@ -1,5 +1,5 @@
-#ifndef DEF_PATIENT
-#define DEF_PATIENT
+#ifndef DEF_JSON_GESTION
+#define DEF_JSON_GESTION
 
 #include <json/json.h>
 
