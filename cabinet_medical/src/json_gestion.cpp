@@ -13,8 +13,10 @@ void json_gestion::json_read()
     Json::Reader reader;
     ifstream ifile(_json_file);
     bool parsingSuccessful = reader.parse( ifile, root );
+    std::cout << parsingSuccessful << '\n';
 
-    if (parsingSuccessful) {
+    if (parsingSuccessful)
+    {
 
         const Json::Value patient = root.get("patient", "");
         if (patient.isObject()) {
@@ -32,7 +34,8 @@ void json_gestion::json_read()
         } else {
             cout << "no object type" << endl;
         }
-    } else
+    }
+    else
         {cout << "json is not correct format" << endl;}
 }
 void json_gestion::json_write()
