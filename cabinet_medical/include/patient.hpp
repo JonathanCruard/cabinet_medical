@@ -21,7 +21,7 @@ public:
     void add_prescription();
     //contructors
     patient();
-    patient(string blood_group, int security_number, int telephon_number);
+    patient(string blood_group, int security_number, int phone_number, string first_name, string last_name, int id);
 
     //getters
     string get_blood_group();
