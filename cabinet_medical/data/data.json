@@ -2,6 +2,7 @@
     "patient":
     [
             {
+                "id": 0,
                 "fname": "jaune",
                 "lname": "attend",
                 "blood_group": "AB",
@@ -9,6 +10,7 @@
                 "security_number": 12021251
             },
             {
+                "id": 1,
                 "fname": "jaune",
                 "lname": "waiting",
                 "blood_group": "O",
@@ -20,8 +22,15 @@
     "doctor":
     [
         {
+            "id": 0,
             "fname": "tang",
             "lname": "tang",
+            "speciality": "chirurgien"
+        },
+        {
+            "id": 1,
+            "fname": "tang",
+            "lname": "lall",
             "speciality": "chirurgien"
         }
     ]
