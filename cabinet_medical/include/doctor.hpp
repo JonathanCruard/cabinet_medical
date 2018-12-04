@@ -16,6 +16,8 @@ public:
     doctor(string speciality);
     //displayer
     void display_doctor();
+    //getters
+    string get_speciality();
 
 
 private:
@@ -25,8 +27,6 @@ private:
     //setters
     void set_speciality(string speciality);
     void set_speciality();
-    //getters
-    string get_speciality();
 };
 
 
