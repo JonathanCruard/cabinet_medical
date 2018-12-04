@@ -53,9 +53,10 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
 }
 void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & doctor_list, vector<meeting> & meeting_list)
 {
+    ofstream output_file(_json_file);
     Json::Value patient;
     Json::Value patient_value;
-    for (size_t index_patient = 0; index_patient < patient_list.size(); index_patient++)
+    for (int index_patient = 0; index_patient < patient_list.size(); index_patient++)
     {
         patient_value["blood_group"] = patient_list[index_patient].get_blood_group();
         patient_value["id"] = patient_list[index_patient].get_id();
@@ -63,10 +64,11 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
         patient_value["lname"] = patient_list[index_patient].get_l_name();
         patient_value["security_number"] = patient_list[index_patient].get_security_number();
         patient_value["phone"] = patient_list[index_patient].get_phone();
+        patient["patient"][index_patient] = patient_value;
     }
     std::cout << patient_value << '\n';
     // Configure the Builder, then ...
     Json::StreamWriterBuilder wbuilder;
-
-    // std::string out1 = Json::writeString(wbuilder, val);
+    std::string test = Json::writeString(wbuilder, patient);
+    output_file << test << '\n';
 }
