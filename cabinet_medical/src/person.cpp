@@ -73,12 +73,12 @@ void person::set_id()
 //==============================================================================
 // Getters
 //==============================================================================
-string person::get_f_name(string nom)
+string person::get_f_name()
 {
     return _first_name;
 }
 
-string person::get_l_name(string nom)
+string person::get_l_name()
 {
     return _last_name;
 }
