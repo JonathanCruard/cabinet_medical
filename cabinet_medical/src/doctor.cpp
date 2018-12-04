@@ -5,7 +5,7 @@ doctor::doctor() : person()
     set_speciality();
 }
 
-doctor::doctor(string speciality) : person()
+doctor::doctor(string speciality, string first_name, string last_name, int id) : person(first_name, last_name, id)
 {
     set_speciality(speciality);
 }

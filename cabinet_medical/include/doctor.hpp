@@ -13,7 +13,7 @@ public:
 //Methods
     //contructors
     doctor();
-    doctor(string speciality);
+    doctor(string speciality, string first_name, string last_name, int id);
     //displayer
     void display_doctor();
     //getters

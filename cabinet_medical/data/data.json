@@ -1,37 +1,21 @@
 {
-    "patient":
-    [
-            {
-                "id": 0,
-                "fname": "jaune",
-                "lname": "attend",
-                "blood_group": "AB",
-                "phone_number": 06203214,
-                "security_number": 12021251
-            },
-            {
-                "id": 1,
-                "fname": "jaune",
-                "lname": "waiting",
-                "blood_group": "O",
-                "phone_number": 06203214,
-                "security_number": 12021251
-            }
-
-    ],
-    "doctor":
-    [
-        {
-            "id": 0,
-            "fname": "tang",
-            "lname": "tang",
-            "speciality": "chirurgien"
-        },
-        {
-            "id": 1,
-            "fname": "tang",
-            "lname": "lall",
-            "speciality": "chirurgien"
-        }
-    ]
+	"patient" : 
+	[
+		{
+			"blood_group" : "AB",
+			"fname" : "jaune",
+			"id" : 0,
+			"lname" : "attend",
+			"phone" : 6203214,
+			"security_number" : 12021251
+		},
+		{
+			"blood_group" : "O",
+			"fname" : "jaune",
+			"id" : 1,
+			"lname" : "waiting",
+			"phone" : 6203214,
+			"security_number" : 12021251
+		}
+	]
 }

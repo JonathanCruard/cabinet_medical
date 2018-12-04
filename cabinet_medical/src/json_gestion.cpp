@@ -34,17 +34,18 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                 // patient_list.push_back(pat);
             }
         }
-        Json::Value doctor = root["doctor"];
-        if (doctor != NULL) {
+        Json::Value doctordat = root["doctor"];
+        if (doctordat != NULL) {
             // Iterate over the sequence elements.
-            for ( int index = 0; index < doctor.size(); ++index)
+            for ( int index = 0; index < doctordat.size(); ++index)
             {
-                Json::Value fname = doctor[index]["fname"];
-                Json::Value lname = doctor[index]["lname"];
-                Json::Value speciality = doctor[index]["speciality"];
-                cout << "fname : " << fname.asString() << endl;
-                cout << "lname : " << lname.asString() << endl;
-                cout << "speciality : " << speciality.asString() << endl;
+                string fname = doctordat[index]["fname"].asString();
+                string lname = doctordat[index]["lname"].asString();
+                string speciality = doctordat[index]["speciality"].asString();
+                int id = doctordat[index]["id"].asInt();
+
+                doctor new_doc(speciality, fname, lname, id);
+                doctor_list.push_back(new_doc);
             }
         }
     }
@@ -66,9 +67,22 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
         patient_value["phone"] = patient_list[index_patient].get_phone();
         patient["patient"][index_patient] = patient_value;
     }
-    std::cout << patient_value << '\n';
+
+    Json::Value doctor;
+    Json::Value doctor_value;
+    for (int index_doctor = 0; index_doctor < doctor_list.size(); index_doctor++)
+    {
+        doctor_value["id"] = doctor_list[index_doctor].get_id();
+        doctor_value["fname"] = doctor_list[index_doctor].get_f_name();
+        doctor_value["lname"] = doctor_list[index_doctor].get_l_name();
+        doctor_value["speciality"] = doctor_list[index_doctor].get_speciality();
+        doctor["doctor"][index_doctor] = doctor_value;
+    }
+
     // Configure the Builder, then ...
     Json::StreamWriterBuilder wbuilder;
-    std::string test = Json::writeString(wbuilder, patient);
-    output_file << test << '\n';
+    std::string export_patient = Json::writeString(wbuilder, patient);
+    output_file << export_patient << '\n';
+    std::string export_doctor = Json::writeString(wbuilder, doctor);
+    output_file << export_doctor << '\n';
 }
