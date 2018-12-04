@@ -16,5 +16,13 @@
                 "security_number": 12021251
             }
 
+    ],
+    "doctor":
+    [
+        {
+            "fname": "tang",
+            "lname": "tang",
+            "speciality": "chirurgien"
+        }
     ]
 }

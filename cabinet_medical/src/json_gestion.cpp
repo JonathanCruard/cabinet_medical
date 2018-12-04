@@ -4,7 +4,7 @@
 
 json_gestion::json_gestion()
 {
-    this->_json_file = "./data/test.json";
+    this->_json_file = "./data/data.json";
 }
 
 void json_gestion::json_read()
@@ -17,23 +17,39 @@ void json_gestion::json_read()
     if (parsingSuccessful)
     {
         Json::Value patient = root["patient"];
-        // Iterate over the sequence elements.
-        for ( int index = 0; index < patient.size(); ++index)
+        if (patient != NULL)
         {
-            Json::Value blood_group = patient[index]["blood_group"];
-            Json::Value fname = patient[index]["fname"];
-            Json::Value lname = patient[index]["lname"];
-            Json::Value phone_number = patient[index]["phone_number"];
-            Json::Value security_number = patient[index]["security_number"];
-            cout << "fname : " << fname.asString() << endl;
-            cout << "lname : " << lname.asString() << endl;
-            cout << "blood_group : " << blood_group.asString() << endl;
-            cout << "phone_number : " << phone_number.asInt() << endl;
-            cout << "security_number : " << security_number.asInt() << endl;
+            // Iterate over the sequence elements.
+            for ( int index = 0; index < patient.size(); ++index)
+            {
+                Json::Value blood_group = patient[index]["blood_group"];
+                Json::Value fname = patient[index]["fname"];
+                Json::Value lname = patient[index]["lname"];
+                Json::Value phone_number = patient[index]["phone_number"];
+                Json::Value security_number = patient[index]["security_number"];
+                cout << "fname : " << fname.asString() << endl;
+                cout << "lname : " << lname.asString() << endl;
+                cout << "blood_group : " << blood_group.asString() << endl;
+                cout << "phone_number : " << phone_number.asInt() << endl;
+                cout << "security_number : " << security_number.asInt() << endl;
+            }
+        }
+        Json::Value doctor = root["doctor"];
+        if (doctor != NULL) {
+            // Iterate over the sequence elements.
+            for ( int index = 0; index < doctor.size(); ++index)
+            {
+                Json::Value fname = doctor[index]["fname"];
+                Json::Value lname = doctor[index]["lname"];
+                Json::Value speciality = doctor[index]["speciality"];
+                cout << "fname : " << fname.asString() << endl;
+                cout << "lname : " << lname.asString() << endl;
+                cout << "speciality : " << speciality.asString() << endl;
+            }
         }
     }
     else
-        {cout << "json is not correct format" << endl;}
+        {cout << "json is not in correct format" << endl;}
 }
 void json_gestion::json_write()
 {
