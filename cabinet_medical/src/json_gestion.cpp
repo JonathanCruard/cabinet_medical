@@ -17,16 +17,20 @@ void json_gestion::json_read()
     if (parsingSuccessful)
     {
         Json::Value patient = root["patient"];
-        Json::Value blood_group = patient[0]["blood_group"];
-        Json::Value fname = patient[0]["fname"];
-        Json::Value lname = patient[0]["lname"];
-        Json::Value phone_number = patient[0]["phone_number"];
-        Json::Value security_number = patient[0]["security_number"];
-        cout << "fname : " << fname.asString() << endl;
-        cout << "lname : " << lname.asString() << endl;
-        cout << "blood_group : " << blood_group.asString() << endl;
-        cout << "phone_number : " << phone_number.asInt() << endl;
-        cout << "security_number : " << security_number.asInt() << endl;
+        // Iterate over the sequence elements.
+        for ( int index = 0; index < patient.size(); ++index)
+        {
+            Json::Value blood_group = patient[index]["blood_group"];
+            Json::Value fname = patient[index]["fname"];
+            Json::Value lname = patient[index]["lname"];
+            Json::Value phone_number = patient[index]["phone_number"];
+            Json::Value security_number = patient[index]["security_number"];
+            cout << "fname : " << fname.asString() << endl;
+            cout << "lname : " << lname.asString() << endl;
+            cout << "blood_group : " << blood_group.asString() << endl;
+            cout << "phone_number : " << phone_number.asInt() << endl;
+            cout << "security_number : " << security_number.asInt() << endl;
+        }
     }
     else
         {cout << "json is not correct format" << endl;}
