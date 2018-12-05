@@ -92,11 +92,11 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                 int id_doctor = meeting_dat[index]["id_doctor"].asInt();
                 int id_patient = meeting_dat[index]["id_patient"].asInt();
                 string object = meeting_dat[index]["object"].asString();
-                date _meeting_date = parse_date(meeting_dat[index]["date"]);
-                // // Instanciate doctor setting up informations
-                // doctor new_doc(speciality, fname, lname, id);
-                // // Add this instance in doctor list
-                // doctor_list.push_back(new_doc);
+                date meeting_date = parse_date(meeting_dat[index]["date"]);
+                // Instanciate meeting object
+                meeting meeting_object(id_doctor, id_patient, meeting_date, object);
+                // Add this instance in meeting list
+                meeting_list.push_back(meeting_object);
             }
         }
     }
@@ -162,10 +162,11 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
         // Save patient informations in json value to nest every patients
         cabinet["patient"][index_patient] = patient_value;
     }
+    // For every doctors in doctors list
     Json::Value doctor_value;
     for (int index_doctor = 0; index_doctor < doctor_list.size(); index_doctor++)
     {
-        // Get last doctor's informations
+        // Get doctor's informations
         doctor_value["id"] = doctor_list[index_doctor].get_id();
         doctor_value["fname"] = doctor_list[index_doctor].get_f_name();
         doctor_value["lname"] = doctor_list[index_doctor].get_l_name();
@@ -173,7 +174,21 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
         // Save doctor informations in json value to nest every doctors
         cabinet["doctor"][index_doctor] = doctor_value;
     }
-
+    // For every meeting in meeting list
+    Json::Value meeting_value;
+    for (int index_meeting = 0; index_meeting < meeting_list.size(); index_meeting++)
+    {
+        // Get meeting's informations
+        meeting_value["id_doctor"] = meeting_list[index_meeting].get_id_doctor();
+        meeting_value["id_patient"] = meeting_list[index_meeting].get_id_patient();
+        meeting_value["object"] = meeting_list[index_meeting].get_object();
+        // Get date object of current meeting
+        date date_data = meeting_list[index_meeting].get_date();
+        // Get informations from this object and add them in json value to nest date
+        meeting_value = construct_date_json_value(date_data);
+        // Save meeting informations in json value to nest every meeting
+        cabinet["meeting"][index_meeting] = meeting_value;
+    }
     // Configure the Builder
     Json::StreamWriterBuilder wbuilder;
     // Use builder to generate data set as a json and save it in a string

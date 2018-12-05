@@ -78,6 +78,10 @@ string meeting::get_object()
 {
     return _object;
 }
+date meeting::get_date()
+{
+    return _meeting_date;
+}
 
 //==============================================================================
 // Displayer

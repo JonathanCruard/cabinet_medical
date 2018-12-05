@@ -13,6 +13,11 @@ public:
     //contructors
     meeting(int ID_doc, int ID_pat);
     meeting(int ID_doc, int ID_pat, date meet_date, string object);
+    //getters
+    unsigned get_id_doctor();
+    unsigned get_id_patient();
+    string get_object();
+    date get_date();
 
 //Methods
     void display();
@@ -30,10 +35,6 @@ private:
     void set_meeting_date(date new_date);
     void set_object();
     void set_object(string object);
-    //getters
-    unsigned get_id_doctor();
-    unsigned get_id_patient();
-    string get_object();
 
 };
 #endif
