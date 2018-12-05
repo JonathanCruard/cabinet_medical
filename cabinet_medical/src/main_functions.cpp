@@ -38,3 +38,17 @@ void select_doctor(vector<doctor> const& doctor_list, int & current_doctor_id)
     std::cout << "Enter the chosen doctor ID" << '\n';
     std::cin >> current_doctor_id;
 }
+
+void add_doctor(vector<doctor> & doctor_list, int & current_doctor_id)
+{
+    doctor new_doctor(doctor_list.size());
+    doctor_list.push_back(new_doctor);
+    current_doctor_id = doctor_list.size()-1;
+}
+
+void add_patient(vector<patient> & patient_list, int & current_patient_id)
+{
+    patient new_patient(patient_list.size());
+    patient_list.push_back(new_patient);
+    current_patient_id = patient_list.size()-1;
+}

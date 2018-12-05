@@ -19,5 +19,8 @@ void select_patient(vector<patient> const& patient_list, int & current_patient_i
 
 void select_doctor(vector<doctor> const& doctor_list, int & current_doctor_id);
 
+void add_doctor(vector<doctor> & doctor_list, int & current_doctor_id);
+
+void add_patient(vector<patient> & doctor_list, int & current_patient_id);
 
 #endif
