@@ -119,15 +119,16 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
     for (int index_patient = 0; index_patient < patient_list.size(); index_patient++)
     {
         // Initialize some json value
-        Json::Value patient_value = NULL;
-        Json::Value prescription_value = NULL;
-        Json::Value date_value = NULL;
-        Json::Value drugs_value = NULL;
+        Json::Value patient_value;
+        Json::Value prescription_value;
+        Json::Value date_value;
+        Json::Value drugs_value;
         // Initialize a vector of prescription object
         vector<prescription> prescription_list;
         // Get prescription list of current patient
         prescription_list = patient_list[index_patient].get_prescription_list();
         // Iterate tought prescriptions of current patient (He can have multiple prescriptions)
+        int j = 0;
         for (auto presc : prescription_list)
         {
             // Get informations of current prescriptions
@@ -148,9 +149,11 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
             }
             // Add them in json value to nest drugs
             prescription_value["drugs"] = drugs_value;
+            // Add them in json value to nest drugs and date at the same level
+            patient_value["prescriptions"][j] = prescription_value;
+            j++;
         }
-        // Add them in json value to nest drugs and date at the same level
-        patient_value["prescriptions"] = prescription_value;
+
 
         // Get last patient's informations
         patient_value["blood_group"] = patient_list[index_patient].get_blood_group();
