@@ -3,11 +3,11 @@
 //==============================================================================
 // Constructors
 //==============================================================================
-person::person()
+person::person(int id)
 {
     set_f_name();
     set_l_name();
-    set_id();
+    set_id(id);
 }
 
 person::person(string first_name, string last_name, int id)
@@ -34,10 +34,6 @@ void person::set_id(int id) {
     this->_id = id;
 }
 
-// void person::set_id()
-// {
-//     //TODO récupérer les ID existants dans les fichiers et en créer un nouveau
-// }
 void person::set_f_name()
 {
     std::cout << "What is first name? " << '\n';
@@ -62,18 +58,7 @@ void person::set_l_name()
         std::cin >> this->_last_name;
     }
 }
-void person::set_id()
-{
-    std::cout << "What is your id? " << '\n';
-    std::cin >> this->_id;
-    while (cin.fail())
-    {
-        cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        cout << "Invalid input, try again" << endl;
-        std::cin >> this->_id;
-    }
-}
+
 //==============================================================================
 // Getters
 //==============================================================================
