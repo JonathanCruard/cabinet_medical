@@ -13,4 +13,11 @@
 
 void save_and_quit(vector<patient> & patient_list, vector<doctor> & doctor_list, vector<meeting> & meeting_list);
 
+void print_header();
+
+void select_patient(vector<patient> const& patient_list, int & current_patient_id);
+
+void select_doctor(vector<doctor> const& doctor_list, int & current_doctor_id);
+
+
 #endif

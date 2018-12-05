@@ -14,7 +14,7 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
     int choice = 9999;
     while (true)
     {
-        std::cout << "************* Welcome to Arkham Asylum *************" << '\n';
+        print_header();
         if (current_patient_id != -1)
         {
             std::cout << "current patient" << '\n' << '\n';
@@ -43,18 +43,7 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
                     current_patient_id = patient_list.size()-1;
                 }
                 break;
-                case 2:
-                {
-                    int pnum = 0;
-                    for (auto p : patient_list)
-                    {
-                        std::cout << "Patient # : " << pnum << '\n';
-                        pnum++;
-                        p.display();
-                    }
-                    std::cout << "Enter the patient #" << '\n';
-                    std::cin >> current_patient_id;
-                }
+                case 2: select_patient(patient_list, current_patient_id);
                 break;
                 default:
                 break;
@@ -73,23 +62,9 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
                     current_patient_id = patient_list.size()-1;
                 }
                 break;
-                case 2:
-                {
-                    int pnum = 0;
-                    for (auto p : patient_list)
-                    {
-                        std::cout << "Patient # : " << pnum << '\n';
-                        pnum++;
-                        p.display();
-                    }
-                    std::cout << "Enter the chosen patient #" << '\n';
-                    std::cin >> current_patient_id;
-                }
+                case 2: select_patient(patient_list, current_patient_id);
                 break;
-                case 3:
-                {
-                    patient_list[current_patient_id].add_prescription();
-                }
+                case 3:        patient_list[current_patient_id].add_prescription();
                 break;
                 case 4: patient_list[current_patient_id].display_prescriptions();
                 break;
@@ -106,7 +81,12 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
     int choice = 9999;
     while (true)
     {
-        std::cout << "************* Welcome to Arkham Asylum *************" << '\n';
+        print_header();
+        if (current_doctor_id != -1)
+        {
+            std::cout << "current doctor" << '\n' << '\n';
+            doctor_list[current_doctor_id].display();
+        }
         std::cout << "Doctor menu"<< '\n';
         std::cout << "1 : add new doctor" << '\n';
         std::cout << "2 : choose doctor" << '\n';
@@ -129,18 +109,7 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
                     current_doctor_id = doctor_list.size()-1;
                 }
                 break;
-                case 2:
-                {
-                    int pnum = 0;
-                    for (auto p : doctor_list)
-                    {
-                        std::cout << "Doctor # : " << pnum << '\n';
-                        pnum++;
-                        p.display();
-                    }
-                    std::cout << "Enter the doctor #" << '\n';
-                    std::cin >> current_doctor_id;
-                }
+                case 2: select_doctor(doctor_list, current_doctor_id);
                 break;
                 default:
                 break;
@@ -159,18 +128,7 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
                     current_doctor_id = doctor_list.size()-1;
                 }
                 break;
-                case 2:
-                {
-                    int pnum = 0;
-                    for (auto p : doctor_list)
-                    {
-                        std::cout << "Doctor # : " << pnum << '\n';
-                        pnum++;
-                        p.display();
-                    }
-                    std::cout << "Enter the chosen doctor #" << '\n';
-                    std::cin >> current_doctor_id;
-                }
+                case 2: select_doctor(doctor_list, current_doctor_id);
                 break;
                 case 3: doctor_list[current_doctor_id].display_doctor();
                 break;
@@ -193,7 +151,7 @@ int main()
     int choice = 9999;
     while (choice != 0)
     {
-        std::cout << "************* Welcome to Arkham Asylum *************" << '\n' << "To control this program please select one of those possibilities:"<< '\n';
+        print_header();
         std::cout << "1 : patients menu" << '\n';
         std::cout << "2 : doctors menu" << '\n';
         std::cout << "3 : agenda" << '\n';
