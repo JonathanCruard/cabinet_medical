@@ -52,8 +52,8 @@ void patient::set_referent_doc_ID(int referent_doc_ID)
 
 void patient::set_blood_group()
 {
-    std::cout << "Enter your blood_group" << '\n';
-    cin.ignore();
+    std::cout << "Enter blood_group" << '\n';
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getline(cin,this->_blood_group);
     while (cin.fail())
     {
@@ -66,7 +66,7 @@ void patient::set_blood_group()
 
 void patient::set_security_number()
 {
-    std::cout << "Enter your security_number" << '\n';
+    std::cout << "Enter security_number" << '\n';
     std::cin >> this->_security_number;
     while (cin.fail())
     {

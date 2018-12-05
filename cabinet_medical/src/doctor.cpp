@@ -19,13 +19,14 @@ void doctor::set_speciality(string speciality)
 void doctor::set_speciality()
 {
     std::cout << "Enter the doctor speciality" << '\n';
-    std::cin >> this->_speciality;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    getline(cin,this->_speciality);
     while (cin.fail())
     {
         cin.clear();
         cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
-        std::cin >> this->_speciality;
+        getline(cin,this->_speciality);
     }
 }
 

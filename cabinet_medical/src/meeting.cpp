@@ -49,9 +49,8 @@ void meeting::set_object(string object)
 void meeting::set_object()
 {
     std::cout << "What is meeting object?" << '\n';
-    cin.ignore();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getline(cin,this->_object);
-    // std::cin >> this->_object;
     while (cin.fail())
     {
         cin.clear();

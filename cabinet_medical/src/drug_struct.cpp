@@ -37,7 +37,7 @@ void drug_struct::set_posology(string posology)
 void drug_struct::set_name()
 {
     std::cout << "Enter drug name" << '\n';
-    cin.ignore();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getline(cin,this->_drug_name);
     while (cin.fail())
     {
@@ -50,7 +50,7 @@ void drug_struct::set_name()
 void drug_struct::set_quantity()
 {
     cout << "Enter quantity" << '\n';
-    cin.ignore();
+    // cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getline(cin,this->_quantity);
     while (cin.fail())
     {
@@ -63,7 +63,7 @@ void drug_struct::set_quantity()
 void drug_struct::set_posology()
 {
     cout << "Enter posology" << '\n';
-    cin.ignore();
+    // cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getline(cin,this->_posology);
     while (cin.fail())
     {

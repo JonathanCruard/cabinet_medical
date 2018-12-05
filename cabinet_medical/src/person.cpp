@@ -36,8 +36,8 @@ void person::set_id(int id) {
 
 void person::set_f_name()
 {
-    std::cout << "What is first name? " << '\n';
-    cin.ignore();
+    std::cout << "Enter first name? " << '\n';
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getline(cin,this->_first_name);
     while (cin.fail())
     {
@@ -49,8 +49,8 @@ void person::set_f_name()
 }
 void person::set_l_name()
 {
-    std::cout << "What is last name? " << '\n';
-    cin.ignore();
+    std::cout << "Enter last name? " << '\n';
+    // cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getline(cin,this->_last_name);
     while (cin.fail())
     {
