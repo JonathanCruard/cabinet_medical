@@ -37,31 +37,34 @@ void drug_struct::set_posology(string posology)
 void drug_struct::set_name()
 {
     std::cout << "Enter drug name" << '\n';
-    std::cin >> this->_drug_name;
+    cin.ignore();
+    getline(cin,this->_drug_name);
     while (cin.fail())
     {
         cin.clear();
         cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
-        std::cin >> this->_drug_name;
+        getline(cin,this->_drug_name);
     }
 }
 void drug_struct::set_quantity()
 {
     cout << "Enter quantity" << '\n';
-    cin >> this->_quantity;
+    cin.ignore();
+    getline(cin,this->_quantity);
     while (cin.fail())
     {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
-        cin >> this->_quantity;
+        getline(cin,this->_quantity);
     }
 }
 void drug_struct::set_posology()
 {
     cout << "Enter posology" << '\n';
-    cin >> this->_posology;
+    cin.ignore();
+    getline(cin,this->_posology);
     while (cin.fail())
     {
         cin.clear();
@@ -93,6 +96,7 @@ string drug_struct::get_posology()
 void drug_struct::display()
 {
     std::cout << "  Drug name : " << _drug_name << '\n';
-    std::cout << "  Quantity : " << _quantity << '\n';
-    std::cout << "  Posology : " << _posology << '\n';
+    std::cout << "  Quantity  : " << _quantity << '\n';
+    std::cout << "  Posology  : " << _posology << '\n';
+    std::cout << '\n';
 }

@@ -37,25 +37,27 @@ void person::set_id(int id) {
 void person::set_f_name()
 {
     std::cout << "What is first name? " << '\n';
-    std::cin >> this->_first_name;
+    cin.ignore();
+    getline(cin,this->_first_name);
     while (cin.fail())
     {
         cin.clear();
         cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
-        std::cin >> this->_first_name;
+        getline(cin,this->_first_name);
     }
 }
 void person::set_l_name()
 {
     std::cout << "What is last name? " << '\n';
-    std::cin >> this->_last_name;
+    cin.ignore();
+    getline(cin,this->_last_name);
     while (cin.fail())
     {
         cin.clear();
         cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
-        std::cin >> this->_last_name;
+        getline(cin,this->_last_name);
     }
 }
 

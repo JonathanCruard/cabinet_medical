@@ -53,15 +53,17 @@ void patient::set_referent_doc_ID(int referent_doc_ID)
 void patient::set_blood_group()
 {
     std::cout << "Enter your blood_group" << '\n';
-    std::cin >> this->_blood_group;
+    cin.ignore();
+    getline(cin,this->_blood_group);
     while (cin.fail())
     {
         cin.clear();
         cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
-        std::cin >> this->_blood_group;
+        getline(cin,this->_blood_group);
     }
 }
+
 void patient::set_security_number()
 {
     std::cout << "Enter your security_number" << '\n';
@@ -145,7 +147,7 @@ void patient::display_patient()
     if (!_prescription_list.empty())
     {
         std::cout << "          ############################################################          " << '\n';
-        std::cout << "Prescriptions" << '\n';
+        std::cout << "      Prescriptions" << '\n';
         for (auto presc : _prescription_list)
         {
             presc.display();
