@@ -64,11 +64,7 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
 void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & doctor_list, vector<meeting> & meeting_list)
 {
     ofstream output_file(_json_file);
-    Json::Value patient;
-    Json::Value patient_value;
-    Json::Value prescription_value;
-    Json::Value date_value;
-    Json::Value drugs_value;
+    Json::Value cabinet;
     for (int index_patient = 0; index_patient < patient_list.size(); index_patient++)
     {
         Json::Value patient_value;
@@ -109,10 +105,8 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
 
 
         // Save patient informations
-        patient["patient"][index_patient] = patient_value;
+        cabinet["patient"][index_patient] = patient_value;
     }
-
-    Json::Value doctor;
     Json::Value doctor_value;
     for (int index_doctor = 0; index_doctor < doctor_list.size(); index_doctor++)
     {
@@ -120,13 +114,11 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
         doctor_value["fname"] = doctor_list[index_doctor].get_f_name();
         doctor_value["lname"] = doctor_list[index_doctor].get_l_name();
         doctor_value["speciality"] = doctor_list[index_doctor].get_speciality();
-        doctor["doctor"][index_doctor] = doctor_value;
+        cabinet["doctor"][index_doctor] = doctor_value;
     }
 
     // Configure the Builder, then ...
     Json::StreamWriterBuilder wbuilder;
-    std::string export_patient = Json::writeString(wbuilder, patient);
-    output_file << export_patient << '\n';
-    std::string export_doctor = Json::writeString(wbuilder, doctor);
-    output_file << export_doctor << '\n';
+    std::string export_cabinet = Json::writeString(wbuilder, cabinet);
+    output_file << export_cabinet << '\n';
 }
