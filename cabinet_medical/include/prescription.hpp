@@ -19,6 +19,7 @@ public:
 //class methods
     //setters
     void set_prescriptor();
+    void set_prescriptor(int prescriptor);
     void set_date();
     void append_drug();
     //getters
@@ -29,6 +30,7 @@ public:
     void display();
     //constructors
     prescription();
+    prescription(int prescriptor, date prescription_date, list<drug_struct> drugs);
 };
 
 

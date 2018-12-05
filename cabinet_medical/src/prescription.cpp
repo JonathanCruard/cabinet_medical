@@ -9,6 +9,12 @@ prescription::prescription() : _prescription_date()
     append_drug();
 }
 
+prescription::prescription(int prescriptor, date prescription_date, list<drug_struct> drugs) : _prescription_date(prescription_date)
+{
+    set_prescriptor(prescriptor);
+    this->_drugs = drugs;
+}
+
 //==============================================================================
 // Setters
 //==============================================================================
@@ -37,6 +43,11 @@ void prescription::append_drug()
         cout << "add an other drug to prescription? Yes(Y)" << '\n';
         cin >> add_drug;
     }
+}
+
+void prescription::set_prescriptor(int prescriptor)
+{
+    this->_prescriptor = prescriptor;
 }
 
 //==============================================================================
