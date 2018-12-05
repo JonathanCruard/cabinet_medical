@@ -1,5 +1,6 @@
 Idees a implementees:
     -ajouter actes mediacle dans les prescriptions
+    -réparer l'objet dans les prescript
 
 
 

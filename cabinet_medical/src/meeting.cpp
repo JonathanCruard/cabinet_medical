@@ -10,7 +10,7 @@ meeting::meeting(int ID_doc, int ID_pat)
     set_object();
 }
 
-meeting::meeting(int ID_doc, int ID_pat, date meet_date, string object)
+meeting::meeting(int ID_doc, int ID_pat, date meet_date, string object) : _meeting_date(meet_date)
 {
     set_object(object);
     set_id_doctor(ID_doc);

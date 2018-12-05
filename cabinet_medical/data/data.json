@@ -8,6 +8,21 @@
 			"speciality" : "Psychology"
 		}
 	],
+	"meeting" : 
+	[
+		{
+			"date" : 
+			{
+				"day" : 6,
+				"hour" : 11,
+				"month" : 12,
+				"year" : 2018
+			},
+			"id_doctor" : 0,
+			"id_patient" : 0,
+			"object" : "rekt"
+		}
+	],
 	"patient" : 
 	[
 		{
