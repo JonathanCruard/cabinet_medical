@@ -1,4 +1,13 @@
 {
+	"doctor" : 
+	[
+		{
+			"fname" : "Jonathan",
+			"id" : 0,
+			"lname" : "Cruard",
+			"speciality" : "Psychology"
+		}
+	],
 	"patient" : 
 	[
 		{
@@ -19,23 +28,11 @@
 				"drugs" : 
 				{
 					"name" : "Cafein",
-					"posology" : "50mg/h",
-					"quantity" : "1kg"
-				},
-				"prescriptor" : 0
+					"posology" : "1kg",
+					"quantity" : "50mg/h"
+				}
 			},
 			"security_number" : 69696969
-		}
-	]
-}
-{
-	"doctor" : 
-	[
-		{
-			"fname" : "Jonathan",
-			"id" : 0,
-			"lname" : "Cruard",
-			"speciality" : "Psychology"
 		}
 	]
 }
