@@ -32,8 +32,24 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                 int security_number = patientdat[index]["security_number"].asInt();
                 int id = patientdat[index]["id"].asInt();
 
+                int prescriptor = patientdat[index]["prescriptions"]["prescriptor"].asInt();
+
+                unsigned year = patientdat[index]["prescriptions"]["date"]["year"].asInt();
+                unsigned month = patientdat[index]["prescriptions"]["date"]["month"].asInt();
+                unsigned day = patientdat[index]["prescriptions"]["date"]["day"].asInt();
+                unsigned hour = patientdat[index]["prescriptions"]["date"]["hour"].asInt();
+
+                string drug_name = patientdat[index]["prescriptions"]["name"].asString();
+                string quantity = patientdat[index]["prescriptions"]["posology"].asString();
+                string posology = patientdat[index]["prescriptions"]["quantity"].asString();
+
+                list<drug_struct> list_drugs;
+                date prescription_date(year, month, day, hour);
+                drug_struct drugs_data(drug_name, quantity, posology);
+                list_drugs.push_back(drugs_data);
+
                 // Instanciate patient setting up informations
-                patient pat(blood_group, security_number, phone_number, fname, lname, id);
+                patient pat(blood_group, security_number, phone_number, fname, lname, id, prescription_date, list_drugs);
                 // Add this instance in patient list
                 patient_list.push_back(pat);
             }
