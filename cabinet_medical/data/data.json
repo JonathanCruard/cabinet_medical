@@ -6,7 +6,7 @@
 			"fname" : "jaune",
 			"id" : 0,
 			"lname" : "attend",
-			"phone" : 6203214,
+			"phone" : 0,
 			"security_number" : 12021251
 		},
 		{
@@ -14,8 +14,17 @@
 			"fname" : "jaune",
 			"id" : 1,
 			"lname" : "waiting",
-			"phone" : 6203214,
+			"phone" : 0,
 			"security_number" : 12021251
+		},
+		{
+			"blood_group" : "o+",
+			"fname" : "yo",
+			"id" : 5,
+			"lname" : "lo",
+			"phone" : 0,
+			"security_number" : 10101
 		}
 	]
 }
+null
