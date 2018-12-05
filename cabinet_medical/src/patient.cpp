@@ -16,6 +16,14 @@ patient::patient(string blood_group, int security_number, int phone_number, stri
     set_security_number(security_number);
     set_phone(phone_number);
 }
+
+patient::patient(string blood_group, int security_number, int phone_number, string first_name, string last_name, int id, vector<prescription> prescripts) : person(first_name, last_name, id)
+{
+    set_blood_group(blood_group);
+    set_security_number(security_number);
+    set_phone(phone_number);
+    this->_prescription_list = prescripts;
+}
 //==============================================================================
 // Setters
 //==============================================================================

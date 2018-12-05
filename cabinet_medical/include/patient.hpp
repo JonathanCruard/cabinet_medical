@@ -22,7 +22,8 @@ public:
     //contructors
     patient(int id);
     patient(string blood_group, int security_number, int phone_number, string first_name, string last_name, int id);
-    
+    patient(string blood_group, int security_number, int phone_number, string first_name, string last_name, int id, vector<prescription>);
+
 
     //getters
     string get_blood_group();
