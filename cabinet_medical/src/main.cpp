@@ -152,7 +152,7 @@ int main()
                 break;
             case 2: doctor_menu(patient_list, doctor_list, meeting_list);
                 break;
-            case 3: agenda();
+            case 3: agenda_menu(patient_list, doctor_list, meeting_list);
                 break;
             default:
                 break;

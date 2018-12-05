@@ -133,13 +133,8 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
             prescription_value["prescriptor"] = presc.get_prescriptor();
             // Get date object of current prescription
             date date_data = presc.get_date();
-            // Get informations from this object
-            date_value["year"] = date_data.get_year();
-            date_value["month"] = date_data.get_month();
-            date_value["day"] = date_data.get_day();
-            date_value["hour"] = date_data.get_hour();
-            // Add them in json value to nest date
-            prescription_value["date"] = date_value;
+            // Get informations from this object and add them in json value to nest date
+            prescription_value = construct_date_json_value(date_data);
             // Get drug_struct object of current prescription
             list<drug_struct> drugs_list = presc.get_drugs();
             // Iterate in it (in one prescription it is possible to have multiple drugs)
@@ -199,4 +194,19 @@ date json_gestion::parse_date(Json::Value data)
     // Instanciate an object date
     date date_object(year, month, day, hour);
     return date_object;
+}
+//==============================================================================
+// construct_date_json_value, allows to construct a json value with informations from a
+// date object
+//==============================================================================
+Json::Value json_gestion::construct_date_json_value(date date_object)
+{
+    // Add them in json value to nest date
+    Json::Value date_value;
+    date_value["date"]["year"] = date_object.get_year();
+    date_value["date"]["month"] = date_object.get_month();
+    date_value["date"]["day"] = date_object.get_day();
+    date_value["date"]["hour"] = date_object.get_hour();
+
+    return date_value;
 }
