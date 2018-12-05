@@ -38,6 +38,25 @@ void prescription::append_drug()
         cin >> add_drug;
     }
 }
+
+//==============================================================================
+// Getters
+//==============================================================================
+int prescription::get_prescriptor()
+{
+    return _prescriptor;
+}
+
+date prescription::get_date()
+{
+    return _prescription_date;
+}
+
+list<drug_struct> prescription::get_drugs()
+{
+    return _drugs;
+}
+
 //==============================================================================
 // Displayer
 //==============================================================================
@@ -47,7 +66,8 @@ void prescription::display()
     cout << "Date : ";
     _prescription_date.display();
     cout << "Drug list : " << '\n';
-    for (auto t : _drugs) {
+    for (auto t : _drugs)
+    {
         t.display();
     }
 }

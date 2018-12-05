@@ -24,7 +24,7 @@ public:
     //getters
     int get_prescriptor();
     date get_date();
-    drug_struct get_drugs();
+    list<drug_struct> get_drugs();
     //displayer
     void display();
     //constructors
