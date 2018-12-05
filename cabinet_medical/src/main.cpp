@@ -99,6 +99,32 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
     }
 }
 
+void agenda_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, vector<meeting> & meeting_list)
+{
+    int choice = 9999;
+    while (true)
+    {
+        print_header();
+        std::cout << "Agenda"<< '\n';
+        std::cout << "1 : add new meeting" << '\n';
+        std::cout << "2 : view meetings" << '\n';
+        std::cout << "0 : main menu" << '\n';
+        std::cin >> choice;
+
+        switch (choice)
+        {
+            case 0: return;
+            break;
+            case 1: add_meeting(meeting_list, doctor_list, patient_list);
+            break;
+            case 2: display_meetings(meeting_list);
+            break;
+            default:
+            break;
+        }
+
+    }
+}
 
 int main()
 {

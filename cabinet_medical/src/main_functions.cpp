@@ -19,22 +19,32 @@ void print_header()
     std::cout << "*************************** Welcome to Arkham Asylum ***************************" << '\n';
 }
 
-void select_patient(vector<patient> const& patient_list, int & current_patient_id)
+void display_patient_list(vector<patient> const& patient_list)
 {
     for (auto p : patient_list)
     {
         p.display();
     }
+}
+
+void display_doctor_list(vector<patient> const& doctor_list)
+{
+    for (auto p : doctor_list)
+    {
+        p.display();
+    }
+}
+
+void select_patient(vector<patient> const& patient_list, int & current_patient_id)
+{
+    display_patient_list(patient_list);
     std::cout << "Enter the chosen patient ID" << '\n';
     std::cin >> current_patient_id;
 }
 
 void select_doctor(vector<doctor> const& doctor_list, int & current_doctor_id)
 {
-    for (auto p : doctor_list)
-    {
-        p.display_doctor();
-    }
+    display_doctor_list(doctor_list);
     std::cout << "Enter the chosen doctor ID" << '\n';
     std::cin >> current_doctor_id;
 }
@@ -51,4 +61,25 @@ void add_patient(vector<patient> & patient_list, int & current_patient_id)
     patient new_patient(patient_list.size());
     patient_list.push_back(new_patient);
     current_patient_id = patient_list.size()-1;
+}
+
+void add_meeting(vector<meeting> meeting_list, vector<doctor> & doctor_list, vector<patient> & patient_list)
+{
+    int doc_ID;
+    int pat_ID;
+    display_doctor_list(doctor_list);
+    std::cout << "Choose a doctor in the previous list (type his ID)" << '\n';
+    std::cin >> doc_ID;
+    display_patient_list(patient_list);
+    std::cout << "Choose a patient in the previous list (type his ID)" << '\n';
+    std::cin >> pat_ID;
+    meeting new_meeting(doc_ID, pat_ID);
+}
+
+void display_meetings(vector<meeting> const& meeting_list)
+{
+    for (auto p : meeting_list)
+    {
+        p.display();
+    }
 }
