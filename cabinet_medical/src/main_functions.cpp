@@ -37,16 +37,56 @@ void display_doctor_list(vector<doctor> const& doctor_list)
 
 void select_patient(vector<patient> const& patient_list, int & current_patient_id)
 {
-    display_patient_list(patient_list);
-    std::cout << "Enter the chosen patient ID" << '\n';
-    std::cin >> current_patient_id;
+    current_patient_id = -1;
+    bool first = true;
+    while ((current_patient_id < 0) || (current_patient_id > patient_list.size()-1))
+    {
+        display_patient_list(patient_list);
+        if (first)
+        {
+            first = false;
+        }
+        else
+        {
+            std::cout << "Unknown ID given" << '\n';
+        }
+        std::cout << "Enter the chosen patient ID" << '\n';
+        std::cin >> current_patient_id;
+        while (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cout << "Invalid input, try again" << '\n';
+            std::cin >> current_patient_id;
+        }
+    }
 }
 
 void select_doctor(vector<doctor> const& doctor_list, int & current_doctor_id)
 {
-    display_doctor_list(doctor_list);
-    std::cout << "Enter the chosen doctor ID" << '\n';
-    std::cin >> current_doctor_id;
+    current_doctor_id = -1;
+    bool first = true;
+    while ((current_doctor_id < 0) || (current_doctor_id > doctor_list.size()-1))
+    {
+        display_doctor_list(doctor_list);
+        if (first)
+        {
+            first = false;
+        }
+        else
+        {
+            std::cout << "Unknown ID given" << '\n';
+        }
+        std::cout << "Enter the chosen doctor ID" << '\n';
+        std::cin >> current_doctor_id;
+        while (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cout << "Invalid input, try again" << '\n';
+            std::cin >> current_doctor_id;
+        }
+    }
 }
 
 void add_doctor(vector<doctor> & doctor_list, int & current_doctor_id)
@@ -67,12 +107,8 @@ void add_meeting(vector<meeting> & meeting_list, vector<doctor> & doctor_list, v
 {
     int doc_ID;
     int pat_ID;
-    display_doctor_list(doctor_list);
-    std::cout << "Choose a doctor in the previous list (type his ID)" << '\n';
-    std::cin >> doc_ID;
-    display_patient_list(patient_list);
-    std::cout << "Choose a patient in the previous list (type his ID)" << '\n';
-    std::cin >> pat_ID;
+    select_doctor(doctor_list, doc_ID);
+    select_patient(patient_list, pat_ID);
     meeting new_meeting(doc_ID, pat_ID);
     meeting_list.push_back(new_meeting);
 }
