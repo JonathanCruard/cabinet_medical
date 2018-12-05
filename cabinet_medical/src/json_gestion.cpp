@@ -39,9 +39,9 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                 unsigned day = patientdat[index]["prescriptions"]["date"]["day"].asInt();
                 unsigned hour = patientdat[index]["prescriptions"]["date"]["hour"].asInt();
 
-                string drug_name = patientdat[index]["prescriptions"]["name"].asString();
-                string quantity = patientdat[index]["prescriptions"]["posology"].asString();
-                string posology = patientdat[index]["prescriptions"]["quantity"].asString();
+                string drug_name = patientdat[index]["prescriptions"]["drugs"]["name"].asString();
+                string quantity = patientdat[index]["prescriptions"]["drugs"]["posology"].asString();
+                string posology = patientdat[index]["prescriptions"]["drugs"]["quantity"].asString();
 
                 list<drug_struct> list_drugs;
                 vector<prescription> prescription_list;
