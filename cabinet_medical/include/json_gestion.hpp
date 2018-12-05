@@ -3,11 +3,13 @@
 
 #include <json/json.h>
 #include <fstream>
-#include "person.hpp"
-#include "patient.hpp"
+#include "date.hpp"
 #include "doctor.hpp"
-#include "meeting.hpp"
 #include "global.hpp"
+#include "meeting.hpp"
+#include "patient.hpp"
+#include "person.hpp"
+#include "prescription.hpp"
 
 
 class json_gestion

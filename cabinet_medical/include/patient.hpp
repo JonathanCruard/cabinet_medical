@@ -27,6 +27,7 @@ public:
     string get_blood_group();
     int get_security_number();
     int get_phone();
+    vector<prescription> get_prescription_list();
 
     //displayer
     void display_patient();

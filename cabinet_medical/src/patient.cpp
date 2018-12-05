@@ -1,5 +1,4 @@
 #include "patient.hpp"
-#include "person.hpp"
 
 //==============================================================================
 //contructors
@@ -91,6 +90,10 @@ int patient::get_security_number()
 int patient::get_phone()
 {
     return _phone_number;
+}
+vector<prescription> patient::get_prescription_list()
+{
+    return _prescription_list;
 }
 
 //==============================================================================
