@@ -34,6 +34,7 @@ $(OBJDIR)/patient.o \
 $(OBJDIR)/prescription.o \
 $(OBJDIR)/jsoncpp.o \
 $(OBJDIR)/main.o \
+$(OBJDIR)/main_functions.o \
 $(OBJDIR)/json_gestion.o \
 $(OBJDIR)/date.o
 
@@ -110,7 +111,12 @@ $(OBJDIR)/drug_struct.o: ./$(SRCDIR)/drug_struct.cpp
 	@$(CXX) $@ -c $< $(CXXFLAGS)
 	@echo "Compiled drug_struct.o"
 
-
+#---------------------
+# main_functions
+#---------------------
+$(OBJDIR)/main_functions.o: ./$(SRCDIR)/main_functions.cpp
+	@$(CXX) $@ -c $< $(CXXFLAGS)
+	@echo "Compiled main_functions.o"
 #---------------------
 # PHONEY
 #---------------------
