@@ -2,29 +2,24 @@
 	"patient" : 
 	[
 		{
-			"blood_group" : "AB",
-			"fname" : "jaune",
+			"blood_group" : "null",
+			"fname" : "Tanguy",
 			"id" : 0,
-			"lname" : "attend",
+			"lname" : "Lallemand",
 			"phone" : 0,
-			"security_number" : 12021251
-		},
-		{
-			"blood_group" : "O",
-			"fname" : "jaune",
-			"id" : 1,
-			"lname" : "waiting",
-			"phone" : 0,
-			"security_number" : 12021251
-		},
-		{
-			"blood_group" : "o+",
-			"fname" : "yo",
-			"id" : 5,
-			"lname" : "lo",
-			"phone" : 0,
-			"security_number" : 10101
+			"prescriptions" : null,
+			"security_number" : 69696969
 		}
 	]
 }
-null
+{
+	"doctor" : 
+	[
+		{
+			"fname" : "Jonathan",
+			"id" : 0,
+			"lname" : "Cruard",
+			"speciality" : "Psychology"
+		}
+	]
+}
