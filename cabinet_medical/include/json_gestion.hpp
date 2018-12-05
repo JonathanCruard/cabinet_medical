@@ -19,6 +19,7 @@ public:
     json_gestion();
     void json_read(vector<patient> & patient_list, vector<doctor> & doctor_list, vector<meeting> & meeting_list);
     void json_write(vector<patient> & patient_list, vector<doctor> & doctor_list, vector<meeting> & meeting_list);
+    date parse_date(Json::Value patientdat);
 
     //Variable
         string _json_file;

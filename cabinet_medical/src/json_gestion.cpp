@@ -42,18 +42,13 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                 // Get all prescriptions informations
                 //Get prescriptor
                 int prescriptor = patientdat[index]["prescriptions"]["prescriptor"].asInt();
-                // Get prescription's date informations
-                unsigned year = patientdat[index]["prescriptions"]["date"]["year"].asInt();
-                unsigned month = patientdat[index]["prescriptions"]["date"]["month"].asInt();
-                unsigned day = patientdat[index]["prescriptions"]["date"]["day"].asInt();
-                unsigned hour = patientdat[index]["prescriptions"]["date"]["hour"].asInt();
+                // Get prescription's date informations and get an instance of it
+                date prescription_date = parse_date(patientdat[index]["prescriptions"]["date"]);
                 // Get prescription's drugs informations
                 string drug_name = patientdat[index]["prescriptions"]["drugs"]["name"].asString();
                 string quantity = patientdat[index]["prescriptions"]["drugs"]["posology"].asString();
                 string posology = patientdat[index]["prescriptions"]["drugs"]["quantity"].asString();
 
-                // Instanciate an object date
-                date prescription_date(year, month, day, hour);
                 // Instanciate an object drug_struct
                 drug_struct drugs_data(drug_name, quantity, posology);
                 // Add drug_struct object in list
@@ -84,6 +79,24 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                 doctor new_doc(speciality, fname, lname, id);
                 // Add this instance in doctor list
                 doctor_list.push_back(new_doc);
+            }
+        }
+        // Read meeting informations
+        Json::Value meeting_dat = root["meeting"];
+        if (meeting_dat != NULL)
+        {
+            // Iterate over the sequence elements.
+            for ( int index = 0; index < meeting_dat.size(); ++index)
+            {
+                // Get meeting's informations
+                int id_doctor = meeting_dat[index]["id_doctor"].asInt();
+                int id_patient = meeting_dat[index]["id_patient"].asInt();
+                string object = meeting_dat[index]["object"].asString();
+                date _meeting_date = parse_date(meeting_dat[index]["date"]);
+                // // Instanciate doctor setting up informations
+                // doctor new_doc(speciality, fname, lname, id);
+                // // Add this instance in doctor list
+                // doctor_list.push_back(new_doc);
             }
         }
     }
@@ -172,4 +185,18 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
     string export_cabinet = Json::writeString(wbuilder, cabinet);
     // Export json string in output file
     output_file << export_cabinet << '\n';
+}
+//==============================================================================
+// parse_date, allows to parse date informations
+//==============================================================================
+date json_gestion::parse_date(Json::Value data)
+{
+    // Get prescription's date informations
+    unsigned year = data["year"].asInt();
+    unsigned month = data["month"].asInt();
+    unsigned day = data["day"].asInt();
+    unsigned hour = data["hour"].asInt();
+    // Instanciate an object date
+    date date_object(year, month, day, hour);
+    return date_object;
 }
