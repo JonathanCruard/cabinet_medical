@@ -82,7 +82,8 @@ unsigned person::get_id()
 //==============================================================================
 void person::display()
 {
-    std::cout << "First Name  : " << _first_name << '\n';
-    std::cout << "Last Name  : " << _last_name << '\n';
-    std::cout << "ID  : " << _id << '\n';
+    std::cout << "********************************************************************************" << '\n';
+    std::cout << "First Name         : " << _first_name << '\n';
+    std::cout << "Last Name          : " << _last_name << '\n';
+    std::cout << "ID                 : " << _id << '\n';
 }

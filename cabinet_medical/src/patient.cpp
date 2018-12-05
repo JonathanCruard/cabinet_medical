@@ -139,17 +139,21 @@ void patient::display_patient()
 {
     display();
     std::cout << "Referent doctor ID : " << _referent_doc_ID << '\n';
-    std::cout << "Blood Group : " << _blood_group << '\n';
-    std::cout << "Security number : " << _security_number << '\n';
-    std::cout << "Phone number : " << _phone_number << '\n';
+    std::cout << "Blood Group        : " << _blood_group << '\n';
+    std::cout << "Security number    : " << _security_number << '\n';
+    std::cout << "Phone number       : " << _phone_number << '\n';
 }
 
 void patient::display_prescriptions()
 {
-    display_patient();
-    for (auto presc : _prescription_list)
+    if (!_prescription_list.empty())
     {
-        std::cout << "*******" << '\n';
-        presc.display();
+        display_patient();
+        std::cout << "          ############################################################          " << '\n';
+        std::cout << "Prescriptions" << '\n';
+        for (auto presc : _prescription_list)
+        {
+            presc.display();
+        }
     }
 }

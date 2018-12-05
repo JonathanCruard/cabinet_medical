@@ -17,7 +17,7 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
         print_header();
         if (current_patient_id != -1)
         {
-            std::cout << "current patient" << '\n' << '\n';
+            std::cout << '\n' << "current patient" << '\n';
             patient_list[current_patient_id].display();
         }
         std::cout << '\n' << "Patient menu"<< '\n';
@@ -66,7 +66,7 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
         print_header();
         if (current_doctor_id != -1)
         {
-            std::cout << "current doctor" << '\n' << '\n';
+            std::cout << '\n' << "current doctor" << '\n';
             doctor_list[current_doctor_id].display();
         }
         std::cout << "Doctor menu"<< '\n';
