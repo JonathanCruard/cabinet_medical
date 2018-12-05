@@ -27,7 +27,7 @@ void add_doctor(vector<doctor> & doctor_list, int & current_doctor_id);
 
 void add_patient(vector<patient> & patient_list, int & current_patient_id);
 
-void add_meeting(vector<meeting> meeting_list, vector<doctor> & doctor_list, vector<patient> & patient_list);
+void add_meeting(vector<meeting> & meeting_list, vector<doctor> & doctor_list, vector<patient> & patient_list);
 
 void display_meetings(vector<meeting> const& meeting_list);
 

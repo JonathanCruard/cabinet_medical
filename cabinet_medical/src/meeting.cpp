@@ -5,7 +5,6 @@
 //==============================================================================
 meeting::meeting(int ID_doc, int ID_pat)
 {
-    set_meeting_date();
     set_id_doctor(ID_doc);
     set_id_patient(ID_pat);
     set_object();

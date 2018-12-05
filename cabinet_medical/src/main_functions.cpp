@@ -63,7 +63,7 @@ void add_patient(vector<patient> & patient_list, int & current_patient_id)
     current_patient_id = patient_list.size()-1;
 }
 
-void add_meeting(vector<meeting> meeting_list, vector<doctor> & doctor_list, vector<patient> & patient_list)
+void add_meeting(vector<meeting> & meeting_list, vector<doctor> & doctor_list, vector<patient> & patient_list)
 {
     int doc_ID;
     int pat_ID;
@@ -74,6 +74,7 @@ void add_meeting(vector<meeting> meeting_list, vector<doctor> & doctor_list, vec
     std::cout << "Choose a patient in the previous list (type his ID)" << '\n';
     std::cin >> pat_ID;
     meeting new_meeting(doc_ID, pat_ID);
+    meeting_list.push_back(new_meeting);
 }
 
 void display_meetings(vector<meeting> const& meeting_list)
