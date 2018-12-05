@@ -178,14 +178,14 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
     Json::Value meeting_value;
     for (int index_meeting = 0; index_meeting < meeting_list.size(); index_meeting++)
     {
-        // Get meeting's informations
-        meeting_value["id_doctor"] = meeting_list[index_meeting].get_id_doctor();
-        meeting_value["id_patient"] = meeting_list[index_meeting].get_id_patient();
-        meeting_value["object"] = meeting_list[index_meeting].get_object();
         // Get date object of current meeting
         date date_data = meeting_list[index_meeting].get_date();
         // Get informations from this object and add them in json value to nest date
         meeting_value = construct_date_json_value(date_data);
+        // Get meeting's informations
+        meeting_value["id_doctor"] = meeting_list[index_meeting].get_id_doctor();
+        meeting_value["id_patient"] = meeting_list[index_meeting].get_id_patient();
+        meeting_value["object"] = meeting_list[index_meeting].get_object();
         // Save meeting informations in json value to nest every meeting
         cabinet["meeting"][index_meeting] = meeting_value;
     }
