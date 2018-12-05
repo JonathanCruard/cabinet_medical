@@ -41,23 +41,32 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                 int id = patientdat[index]["id"].asInt();
                 int referent_doc_id = patientdat[index]["referent_doc_id"].asInt();
                 // Get all prescriptions informations
-                //Get prescriptor
-                int prescriptor = patientdat[index]["prescriptions"]["prescriptor"].asInt();
-                // Get prescription's date informations and get an instance of it
-                date prescription_date = parse_date(patientdat[index]["prescriptions"]["date"]);
-                // Get prescription's drugs informations
-                string drug_name = patientdat[index]["prescriptions"]["drugs"]["name"].asString();
-                string quantity = patientdat[index]["prescriptions"]["drugs"]["posology"].asString();
-                string posology = patientdat[index]["prescriptions"]["drugs"]["quantity"].asString();
-
-                // Instanciate an object drug_struct
-                drug_struct drugs_data(drug_name, quantity, posology);
-                // Add drug_struct object in list
-                list_drugs.push_back(drugs_data);
-                // Instanciate an object prescription containing prescriptor's ID, a date object, and a list of drug_struct object
-                prescription prescription_value(prescriptor, prescription_date, list_drugs);
-                // Add prescription object in list
-                prescription_list.push_back(prescription_value);
+                // create a new "root" for parsing
+                const Json::Value prescription_json = patientdat[index]["prescriptions"];
+                // Iterate tought prescriptions (could be multiple)
+                for (int index_prescription = 0; index_prescription < prescription_json.size(); index_prescription++)
+                {
+                    //Get prescriptor
+                    int prescriptor = prescription_json[index_prescription]["prescriptor"].asInt();
+                    // Get prescription's date informations and get an instance of it
+                    date prescription_date = parse_date(prescription_json[index_prescription]["date"]);
+                    // Iterate tought drugs (could be multiple for one prescription)
+                    for (int index_drugs = 0; index_drugs < prescription_json[index_prescription]["drugs"].size(); index_drugs++)
+                    {
+                        // Get prescription's drugs informations
+                        string drug_name = prescription_json[index_prescription]["drugs"][index_drugs]["name"].asString();
+                        string quantity = prescription_json[index_prescription]["drugs"][index_drugs]["posology"].asString();
+                        string posology = prescription_json[index_prescription]["drugs"][index_drugs]["quantity"].asString();
+                        // Instanciate a drug_struct object 
+                        drug_struct drugs_data(drug_name, quantity, posology);
+                        // Add drug_struct object in list
+                        list_drugs.push_back(drugs_data);
+                    }
+                    // Instanciate an object prescription containing prescriptor's ID, a date object, and a list of drug_struct object
+                    prescription prescription_value(prescriptor, prescription_date, list_drugs);
+                    // Add prescription object in list
+                    prescription_list.push_back(prescription_value);
+                }
                 // Instanciate patient setting up informations
                 patient pat(blood_group, security_number, phone_number, fname, lname, id, prescription_list, referent_doc_id);
                 // Add this instance in patient list
@@ -103,7 +112,7 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
     }
     else
     {
-        cout << "json is not in correct format" << endl;
+        cout << "json is not in correct format" << '\n' <<endl;
     }
 }
 //==============================================================================
@@ -140,15 +149,18 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
             // Get drug_struct object of current prescription
             list<drug_struct> drugs_list = presc.get_drugs();
             // Iterate in it (in one prescription it is possible to have multiple drugs)
+            int h = 0;
             for (auto drugs_data : drugs_list)
             {
                 // Get informations of current drug struct
                 drugs_value["name"]= drugs_data.get_name();
                 drugs_value["quantity"]= drugs_data.get_quantity();
                 drugs_value["posology"]= drugs_data.get_posology();
+                // Add them in json value to nest drugs
+                prescription_value["drugs"][h]= drugs_value;
+                h++;
             }
-            // Add them in json value to nest drugs
-            prescription_value["drugs"] = drugs_value;
+
             // Add them in json value to nest drugs and date at the same level
             patient_value["prescriptions"][j] = prescription_value;
             j++;
