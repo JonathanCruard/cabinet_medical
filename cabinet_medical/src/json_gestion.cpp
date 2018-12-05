@@ -119,10 +119,10 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
     for (int index_patient = 0; index_patient < patient_list.size(); index_patient++)
     {
         // Initialize some json value
-        Json::Value patient_value;
-        Json::Value prescription_value;
-        Json::Value date_value;
-        Json::Value drugs_value;
+        Json::Value patient_value = NULL;
+        Json::Value prescription_value = NULL;
+        Json::Value date_value = NULL;
+        Json::Value drugs_value = NULL;
         // Initialize a vector of prescription object
         vector<prescription> prescription_list;
         // Get prescription list of current patient
