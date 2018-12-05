@@ -40,7 +40,8 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
         }
         // Read doctor informations
         Json::Value doctordat = root["doctor"];
-        if (doctordat != NULL) {
+        if (doctordat != NULL)
+        {
             // Iterate over the sequence elements.
             for ( int index = 0; index < doctordat.size(); ++index)
             {
@@ -70,7 +71,12 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
     Json::Value drugs_value;
     for (int index_patient = 0; index_patient < patient_list.size(); index_patient++)
     {
-        vector<prescription> prescription_list = patient_list[index_patient].get_prescription_list();
+        Json::Value patient_value;
+        Json::Value prescription_value;
+        Json::Value date_value;
+        Json::Value drugs_value;
+        vector<prescription> prescription_list;
+        prescription_list = patient_list[index_patient].get_prescription_list();
 
         for (auto presc : prescription_list)
         {
