@@ -7,7 +7,23 @@
 			"id" : 0,
 			"lname" : "Lallemand",
 			"phone" : 0,
-			"prescriptions" : null,
+			"prescriptions" : 
+			{
+				"date" : 
+				{
+					"day" : 5,
+					"hour" : 16,
+					"month" : 12,
+					"year" : 2018
+				},
+				"drugs" : 
+				{
+					"name" : "Cafein",
+					"posology" : "50mg/h",
+					"quantity" : "1kg"
+				},
+				"prescriptor" : 0
+			},
 			"security_number" : 69696969
 		}
 	]
