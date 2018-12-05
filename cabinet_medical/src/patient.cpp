@@ -127,6 +127,10 @@ vector<prescription> patient::get_prescription_list()
 {
     return _prescription_list;
 }
+int patient::get_referent_doc_ID()
+{
+    return _referent_doc_ID;
+}
 
 //==============================================================================
 // Displayers
