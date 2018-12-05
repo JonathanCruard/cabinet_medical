@@ -30,6 +30,7 @@ public:
 
     //displayer
     void display_patient();
+    void display_prescriptions();
 
 
 private:

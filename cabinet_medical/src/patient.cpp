@@ -103,3 +103,13 @@ void patient::display_patient()
     std::cout << "Security number : " << _security_number << '\n';
     std::cout << "Phone number : " << _phone_number << '\n';
 }
+
+void patient::display_prescriptions()
+{
+    display_patient();
+    for (auto presc : _prescription_list)
+    {
+        std::cout << "*******" << '\n';
+        presc.display();
+    }
+}

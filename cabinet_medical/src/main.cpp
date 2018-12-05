@@ -14,7 +14,12 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
     while (true)
     {
         std::cout << "************* Welcome to Arkham Asylum *************" << '\n';
-        std::cout << "Patient menu"<< '\n';
+        if (current_patient_id != -1)
+        {
+            std::cout << "current patient" << '\n' << '\n';
+            patient_list[current_patient_id].display();
+        }
+        std::cout << '\n' << "Patient menu"<< '\n';
         std::cout << "1 : add new patient" << '\n';
         std::cout << "2 : choose patient" << '\n';
         if (current_patient_id != -1)
