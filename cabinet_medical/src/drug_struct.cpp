@@ -92,7 +92,7 @@ string drug_struct::get_posology()
 //==============================================================================
 void drug_struct::display()
 {
-    std::cout << "Drug name : " << _drug_name << '\n';
-    std::cout << "Quantity : " << _quantity << '\n';
-    std::cout << "Posology : " << _posology << '\n';
+    std::cout << "  Drug name : " << _drug_name << '\n';
+    std::cout << "  Quantity : " << _quantity << '\n';
+    std::cout << "  Posology : " << _posology << '\n';
 }

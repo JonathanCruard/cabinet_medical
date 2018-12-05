@@ -73,10 +73,9 @@ list<drug_struct> prescription::get_drugs()
 //==============================================================================
 void prescription::display()
 {
-    cout << "Prescriptor ID : " << _prescriptor << '\n';
-    cout << "Date : ";
+    cout << "Prescriptor ID     : " << _prescriptor << '\n';
     _prescription_date.display();
-    cout << "Drug list : " << '\n';
+    cout << "Drug list          : " << '\n';
     for (auto t : _drugs)
     {
         t.display();

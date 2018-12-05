@@ -135,8 +135,6 @@ unsigned date::get_hour()
 //==============================================================================
 void date::display()
 {
-    std::cout << "date" << '\n';
-    std::cout << _day << '/' << _month << '/' <<  _year << '\n';
-    std::cout << "heure" << '\n';
-    std::cout << _hour << 'H' << '\n';
+    std::cout << "date : " << _day << '/' << _month << '/' <<  _year << '\n';
+    std::cout << "heure : " << _hour << " H" << '\n';
 }
