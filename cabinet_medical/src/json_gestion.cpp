@@ -59,7 +59,7 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                 // Add prescription object in list
                 prescription_list.push_back(prescription_value);
                 // Instanciate patient setting up informations
-                patient pat(blood_group, security_number, phone_number, fname, lname, id, referent_doc_id, prescription_list);
+                patient pat(blood_group, security_number, phone_number, fname, lname, id, prescription_list, referent_doc_id);
                 // Add this instance in patient list
                 patient_list.push_back(pat);
             }
@@ -151,7 +151,7 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
         }
         // Add them in json value to nest drugs and date at the same level
         patient_value["prescriptions"] = prescription_value;
-        
+
         // Get last patient's informations
         patient_value["blood_group"] = patient_list[index_patient].get_blood_group();
         patient_value["id"] = patient_list[index_patient].get_id();
