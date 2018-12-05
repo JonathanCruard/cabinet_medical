@@ -27,7 +27,7 @@ void display_patient_list(vector<patient> const& patient_list)
     }
 }
 
-void display_doctor_list(vector<patient> const& doctor_list)
+void display_doctor_list(vector<doctor> const& doctor_list)
 {
     for (auto p : doctor_list)
     {

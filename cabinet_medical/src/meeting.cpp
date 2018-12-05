@@ -3,18 +3,25 @@
 //==============================================================================
 // Constructors
 //==============================================================================
-meeting::meeting(doctor doc, patient sickguy)
+meeting::meeting(int ID_doc, int ID_pat)
 {
     set_meeting_date();
-    set_id_doctor(doc.get_id());
-    set_id_patient(sickguy.get_id());
+    set_id_doctor(ID_doc);
+    set_id_patient(ID_pat);
     set_object();
+}
+
+meeting::meeting(int ID_doc, int ID_pat, date meet_date, string object)
+{
+    set_object(object);
+    set_id_doctor(ID_doc);
+    set_id_patient(ID_pat);
+    set_meeting_date(meet_date);
 }
 
 //==============================================================================
 // Setters
 //==============================================================================
-
 void meeting::set_id_doctor(unsigned id_doc)
 {
     this->_id_doctor = id_doc;
@@ -28,6 +35,16 @@ void meeting::set_id_patient(unsigned id_patient)
 void meeting::set_meeting_date()
 {
     date _meeting_date;
+}
+
+void meeting::set_meeting_date(date new_date)
+{
+    this->_meeting_date = new_date;
+}
+
+void meeting::set_object(string object)
+{
+    this->_object = object;
 }
 
 void meeting::set_object()
@@ -61,4 +78,17 @@ unsigned meeting::get_id_patient()
 string meeting::get_object()
 {
     return _object;
+}
+
+//==============================================================================
+// Displayer
+//==============================================================================
+
+void meeting::display()
+{
+    std::cout << _object << '\n';
+    _meeting_date.display();
+    std::cout << "Doctor ID :" << _id_doctor << '\n';
+    std::cout << "Patient ID :" << _id_patient << '\n';
+
 }
