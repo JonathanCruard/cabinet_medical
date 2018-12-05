@@ -138,5 +138,5 @@ void date::display()
     std::cout << "date" << '\n';
     std::cout << _day << '/' << _month << '/' <<  _year << '\n';
     std::cout << "heure" << '\n';
-    std::cout << _hour << '\n';
+    std::cout << _hour << 'H' << '\n';
 }
