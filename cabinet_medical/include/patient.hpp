@@ -20,7 +20,7 @@ public:
     void set_phone();
     void add_prescription();
     //contructors
-    patient();
+    patient(int id);
     patient(string blood_group, int security_number, int phone_number, string first_name, string last_name, int id);
 
     //getters

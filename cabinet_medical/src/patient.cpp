@@ -4,7 +4,7 @@
 //==============================================================================
 //contructors
 //==============================================================================
-patient::patient() : person()
+patient::patient(int id) : person(id)
 {
     set_blood_group();
     set_security_number();
