@@ -12,13 +12,23 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
 {
     int current_patient_id = -1;
     int choice = 9999;
+    bool more = false;
     while (true)
     {
+        clear_screen();
         print_header();
         if (current_patient_id != -1)
         {
             std::cout << '\n' << "current patient" << '\n';
-            patient_list[current_patient_id].display();
+            if (more)
+            {
+                patient_list[current_patient_id].display_patient();
+                more = false;
+            }
+            else
+            {
+                patient_list[current_patient_id].display();
+            }
         }
         std::cout << '\n' << "Patient menu"<< '\n';
         std::cout << "1 : add new patient" << '\n';
@@ -26,7 +36,7 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
         if (current_patient_id != -1)
         {
             std::cout << "3 : prescript" << '\n';
-            std::cout << "4 : view informations" << '\n';
+            std::cout << "4 : view all informations" << '\n';
         }
         std::cout << "0 : main menu" << '\n';
         std::cin >> choice;
@@ -35,12 +45,7 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
         {
             case 0: return;
             break;
-            case 1:
-            {
-                patient new_patient(patient_list.size());
-                patient_list.push_back(new_patient);
-                current_patient_id = patient_list.size()-1;
-            }
+            case 1: add_patient(patient_list, current_patient_id);
             break;
             case 2: select_patient(patient_list, current_patient_id);
             break;
@@ -48,7 +53,7 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
             {
                 case 3: patient_list[current_patient_id].add_prescription();
                 break;
-                case 4: patient_list[current_patient_id].display_prescriptions();
+                case 4: more = true;
                 break;
             }
             default:
@@ -63,6 +68,7 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
     int choice = 9999;
     while (true)
     {
+        clear_screen();
         print_header();
         if (current_doctor_id != -1)
         {
@@ -104,6 +110,7 @@ void agenda_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
     int choice = 9999;
     while (true)
     {
+        clear_screen();
         print_header();
         std::cout << "Agenda"<< '\n';
         std::cout << "1 : add new meeting" << '\n';
@@ -137,6 +144,7 @@ int main()
     int choice = 9999;
     while (choice != 0)
     {
+        clear_screen();
         print_header();
         std::cout << "1 : patients menu" << '\n';
         std::cout << "2 : doctors menu" << '\n';

@@ -14,6 +14,7 @@
 void save_and_quit(vector<patient> & patient_list, vector<doctor> & doctor_list, vector<meeting> & meeting_list);
 
 void print_header();
+void clear_screen();
 
 void display_patient_list(vector<patient> const& patient_list);
 

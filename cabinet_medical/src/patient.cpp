@@ -142,13 +142,8 @@ void patient::display_patient()
     std::cout << "Blood Group        : " << _blood_group << '\n';
     std::cout << "Security number    : " << _security_number << '\n';
     std::cout << "Phone number       : " << _phone_number << '\n';
-}
-
-void patient::display_prescriptions()
-{
     if (!_prescription_list.empty())
     {
-        display_patient();
         std::cout << "          ############################################################          " << '\n';
         std::cout << "Prescriptions" << '\n';
         for (auto presc : _prescription_list)

@@ -14,6 +14,11 @@ void save_and_quit(vector<patient> & patient_list, vector<doctor> & doctor_list,
     json.json_write(patient_list, doctor_list, meeting_list);
 }
 
+void clear_screen()
+{
+    cout << string( 100, '\n' );
+}
+
 void print_header()
 {
     std::cout << "*************************** Welcome to Arkham Asylum ***************************" << '\n';
