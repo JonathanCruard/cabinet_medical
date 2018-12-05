@@ -49,13 +49,15 @@ void meeting::set_object(string object)
 void meeting::set_object()
 {
     std::cout << "What is meeting object?" << '\n';
-    std::cin >> this->_object;
+    cin.ignore();
+    getline(cin,this->_object);
+    // std::cin >> this->_object;
     while (cin.fail())
     {
         cin.clear();
         cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cout << "Invalid input, try again" << endl;
-        std::cin >> this->_object;
+        getline(cin,this->_object);
     }
 }
 
