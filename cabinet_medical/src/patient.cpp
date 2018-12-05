@@ -5,20 +5,23 @@
 //==============================================================================
 patient::patient(int id) : person(id)
 {
+    set_referent_doc_ID();
     set_blood_group();
     set_security_number();
     set_phone();
 }
 
-patient::patient(string blood_group, int security_number, int phone_number, string first_name, string last_name, int id) : person(first_name, last_name, id)
+patient::patient(string blood_group, int security_number, int phone_number, string first_name, string last_name, int id, int referent_doc_ID) : person(first_name, last_name, id)
 {
+    set_referent_doc_ID(referent_doc_ID);
     set_blood_group(blood_group);
     set_security_number(security_number);
     set_phone(phone_number);
 }
 
-patient::patient(string blood_group, int security_number, int phone_number, string first_name, string last_name, int id, vector<prescription> prescripts) : person(first_name, last_name, id)
+patient::patient(string blood_group, int security_number, int phone_number, string first_name, string last_name, int id, vector<prescription> prescripts, int referent_doc_ID) : person(first_name, last_name, id)
 {
+    set_referent_doc_ID(referent_doc_ID);
     set_blood_group(blood_group);
     set_security_number(security_number);
     set_phone(phone_number);
@@ -31,13 +34,20 @@ void patient::set_blood_group(string blood_group)
 {
     this->_blood_group = blood_group;
 }
+
 void patient::set_security_number(int security_number)
 {
     this->_security_number = security_number;
 }
+
 void patient::set_phone(int phone_number)
 {
     this->_phone_number = phone_number;
+}
+
+void patient::set_referent_doc_ID(int referent_doc_ID)
+{
+    this->_referent_doc_ID = referent_doc_ID;
 }
 
 void patient::set_blood_group()
@@ -66,7 +76,7 @@ void patient::set_security_number()
 }
 void patient::set_phone()
 {
-    std::cout << "Enter your phone" << '\n';
+    std::cout << "Enter phone number" << '\n';
     std::cin >> this->_phone_number;
     while (cin.fail())
     {
@@ -76,6 +86,20 @@ void patient::set_phone()
         std::cin >> this->_phone_number;
     }
 }
+
+void patient::set_referent_doc_ID()
+{
+    std::cout << "Please enter the ID of the referent doctor" << '\n';
+    std::cin >> this->_referent_doc_ID;
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        cout << "Invalid input, try again" << endl;
+        std::cin >> this->_referent_doc_ID;
+    }
+}
+
 
 void patient::add_prescription()
 {
