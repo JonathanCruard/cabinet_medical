@@ -44,12 +44,15 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                 string posology = patientdat[index]["prescriptions"]["quantity"].asString();
 
                 list<drug_struct> list_drugs;
+                vector<prescription> prescription_list;
                 date prescription_date(year, month, day, hour);
                 drug_struct drugs_data(drug_name, quantity, posology);
                 list_drugs.push_back(drugs_data);
+                prescription prescription_value(prescriptor, prescription_date, list_drugs);
+                prescription_list.push_back(prescription_value);
 
                 // Instanciate patient setting up informations
-                patient pat(blood_group, security_number, phone_number, fname, lname, id, prescription_date, list_drugs);
+                patient pat(blood_group, security_number, phone_number, fname, lname, id, prescription_list);
                 // Add this instance in patient list
                 patient_list.push_back(pat);
             }
