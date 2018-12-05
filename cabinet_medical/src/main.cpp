@@ -37,7 +37,7 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
                 break;
                 case 1:
                 {
-                    patient new_patient;
+                    patient new_patient(patient_list.size());
                     patient_list.push_back(new_patient);
                     current_patient_id = patient_list.size()-1;
                 }
@@ -67,7 +67,7 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
                 break;
                 case 1:
                 {
-                    patient new_patient;
+                    patient new_patient(patient_list.size());
                     patient_list.push_back(new_patient);
                     current_patient_id = patient_list.size()-1;
                 }
@@ -90,7 +90,7 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
                     patient_list[current_patient_id].add_prescription();
                 }
                 break;
-                case 4: patient_list[current_patient_id].display_patient();
+                case 4: patient_list[current_patient_id].display_prescriptions();
                 break;
                 default:
                 break;
@@ -123,7 +123,7 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
                 break;
                 case 1:
                 {
-                    doctor new_doctor;
+                    doctor new_doctor(doctor_list.size());
                     doctor_list.push_back(new_doctor);
                     current_doctor_id = doctor_list.size()-1;
                 }
@@ -153,7 +153,7 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
                 break;
                 case 1:
                 {
-                    doctor new_doctor;
+                    doctor new_doctor(doctor_list.size());
                     doctor_list.push_back(new_doctor);
                     current_doctor_id = doctor_list.size()-1;
                 }
