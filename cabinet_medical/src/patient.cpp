@@ -138,6 +138,7 @@ int patient::get_referent_doc_ID()
 void patient::display_patient()
 {
     display();
+    std::cout << "Referent doctor ID : " << _referent_doc_ID << '\n';
     std::cout << "Blood Group : " << _blood_group << '\n';
     std::cout << "Security number : " << _security_number << '\n';
     std::cout << "Phone number : " << _phone_number << '\n';
