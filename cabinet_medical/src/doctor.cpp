@@ -1,6 +1,6 @@
 #include "doctor.hpp"
 
-doctor::doctor() : person()
+doctor::doctor(int id) : person(id)
 {
     set_speciality();
 }

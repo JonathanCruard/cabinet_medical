@@ -12,7 +12,7 @@ public:
 
 //Methods
     //contructors
-    doctor();
+    doctor(int id);
     doctor(string speciality, string first_name, string last_name, int id);
     //displayer
     void display_doctor();
