@@ -39,6 +39,7 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                 int phone_number = patientdat[index]["phone_number"].asInt();
                 int security_number = patientdat[index]["security_number"].asInt();
                 int id = patientdat[index]["id"].asInt();
+                int referent_doc_id = patientdat[index]["referent_doc_id"].asInt();
                 // Get all prescriptions informations
                 //Get prescriptor
                 int prescriptor = patientdat[index]["prescriptions"]["prescriptor"].asInt();
@@ -58,7 +59,7 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                 // Add prescription object in list
                 prescription_list.push_back(prescription_value);
                 // Instanciate patient setting up informations
-                patient pat(blood_group, security_number, phone_number, fname, lname, id, prescription_list);
+                patient pat(blood_group, security_number, phone_number, fname, lname, id, referent_doc_id, prescription_list);
                 // Add this instance in patient list
                 patient_list.push_back(pat);
             }
@@ -150,6 +151,7 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
         }
         // Add them in json value to nest drugs and date at the same level
         patient_value["prescriptions"] = prescription_value;
+        
         // Get last patient's informations
         patient_value["blood_group"] = patient_list[index_patient].get_blood_group();
         patient_value["id"] = patient_list[index_patient].get_id();
@@ -157,6 +159,7 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
         patient_value["lname"] = patient_list[index_patient].get_l_name();
         patient_value["security_number"] = patient_list[index_patient].get_security_number();
         patient_value["phone"] = patient_list[index_patient].get_phone();
+        patient_value["referent_doc_id"] = patient_list[index_patient].get_referent_doc_ID();
 
 
         // Save patient informations in json value to nest every patients
@@ -222,6 +225,5 @@ Json::Value json_gestion::construct_date_json_value(date date_object)
     date_value["date"]["month"] = date_object.get_month();
     date_value["date"]["day"] = date_object.get_day();
     date_value["date"]["hour"] = date_object.get_hour();
-
     return date_value;
 }
