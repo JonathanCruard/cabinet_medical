@@ -9,16 +9,14 @@ date::date()
     set_month();
     set_day();
     set_hour();
-    set_minute();
 }
 
-date::date(unsigned year, unsigned month, unsigned day, unsigned hour, unsigned minute)
+date::date(unsigned year, unsigned month, unsigned day, unsigned hour)
 {
     set_year(year);
     set_month(month);
     set_day(day);
     set_hour(hour);
-    set_minute(minute);
 }
 
 date::date(date const& copy)
@@ -27,13 +25,11 @@ date::date(date const& copy)
     set_month(copy._month);
     set_day(copy._day);
     set_hour(copy._hour);
-    set_minute(copy._minute);
 }
 
 //==============================================================================
 // Setters
 //==============================================================================
-
 void date::set_year(unsigned year)
 {
     this->_year = year;
@@ -54,10 +50,7 @@ void date::set_hour(unsigned hour)
     this->_hour = hour;
 }
 
-void date::set_minute(unsigned minute)
-{
-    this->_minute = minute;
-}
+
 
 
 void date::set_year()
@@ -112,23 +105,11 @@ void date::set_hour()
     }
 }
 
-void date::set_minute()
-{
-    std::cout << "enter minute (mm)" << '\n';
-    std::cin >> this->_minute;
-    while (cin.fail())
-    {
-        cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        cout << "Invalid input, try again" << endl;
-        std::cin >> this->_minute;
-    }
-}
+
 
 //==============================================================================
 // Getters
 //==============================================================================
-
 unsigned date::get_year()
 {
     return _year;
@@ -149,10 +130,6 @@ unsigned date::get_hour()
     return _hour;
 }
 
-unsigned date::get_minute()
-{
-    return _minute;
-}
 //==============================================================================
 // Displayer
 //==============================================================================
@@ -161,5 +138,5 @@ void date::display()
     std::cout << "date" << '\n';
     std::cout << _day << '/' << _month << '/' <<  _year << '\n';
     std::cout << "heure" << '\n';
-    std::cout << _hour << ':' << _minute << '\n';
+    std::cout << _hour << '\n';
 }
