@@ -6,14 +6,17 @@
 class drug_struct
 {
 private:
-//class variables
+// Class variables
     string _drug_name;
     string _quantity;
     string _posology;
 
 public:
-//class methods
-    //setters
+// Class methods
+    //Constructors
+    drug_struct();
+    drug_struct(string drug_name, string quantity, string posology);
+    // Setters
     void set_name(string nom);
     void set_quantity(string quantity);
     void set_posology(string posology);
@@ -22,14 +25,11 @@ public:
     void set_quantity();
     void set_posology();
 
-    //getters
+    // Getters
     string get_name();
     string get_quantity();
     string get_posology();
-
-    //constructors
-    drug_struct();
-    drug_struct(string drug_name, string quantity, string posology);
+    
     //displayer
     void display();
 };

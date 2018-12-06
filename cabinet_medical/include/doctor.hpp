@@ -21,7 +21,7 @@ public:
 
 
 private:
-//Variable
+//Class variable
     string _speciality;
 //class methods
     //setters

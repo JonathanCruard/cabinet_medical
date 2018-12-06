@@ -10,10 +10,10 @@ class meeting
 {
 public:
 //Methods
-    //contructors
+    // Contructors
     meeting(int ID_doc, int ID_pat);
     meeting(int ID_doc, int ID_pat, date meet_date, string object);
-    //getters
+    // Getters
     unsigned get_id_doctor();
     unsigned get_id_patient();
     string get_object();
@@ -22,12 +22,12 @@ public:
 //Methods
     void display();
 private:
-//Variable
+// Class variable
     date _meeting_date;
     int _id_doctor;
     int _id_patient;
     string _object;
-//Class methods
+// Class methods
     //setters
     void set_id_doctor(unsigned id_doctor);
     void set_id_patient(unsigned id_patient);
