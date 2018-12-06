@@ -31,7 +31,7 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
             }
         }
         std::cout << "********************************************************************************" << '\n';
-        std::cout << '\n' << "      Patient menu"<< '\n';
+        std::cout << "      Patient menu"<< '\n';
         std::cout << "1 : add new patient" << '\n';
         std::cout << "2 : choose patient" << '\n';
         if (current_patient_id != -1)
@@ -77,12 +77,12 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
             std::cout << '\n' << "      Current doctor" << '\n';
             if (more)
             {
-                doctor_list[current_doctor_id].display();
+                doctor_list[current_doctor_id].display_doctor();
                 more = false;
             }
             else
             {
-                doctor_list[current_doctor_id].display_doctor();
+                doctor_list[current_doctor_id].display();
             }
         }
         std::cout << "********************************************************************************" << '\n';
@@ -135,7 +135,15 @@ void agenda_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
             break;
             case 1: add_meeting(meeting_list, doctor_list, patient_list);
             break;
-            case 2: display_meetings(meeting_list);
+            case 2:
+            {
+                display_meetings(meeting_list);
+                std::cout << "##############################" << '\n';
+                string trash;
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                std::cout << "Enter anything to continue" << '\n';
+                getline(cin, trash);
+            }
             break;
             default:
             break;
@@ -158,6 +166,7 @@ int main()
         clear_screen();
         print_header();
         std::cout << "********************************************************************************" << '\n';
+        std::cout << "      Main menu"<< '\n';
         std::cout << "1 : patients menu" << '\n';
         std::cout << "2 : doctors menu" << '\n';
         std::cout << "3 : agenda" << '\n';

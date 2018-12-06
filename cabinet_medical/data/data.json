@@ -1,5 +1,5 @@
 {
-	"doctor" : 
+	"doctor" :
 	[
 		{
 			"fname" : "Jonathan",
@@ -23,19 +23,19 @@
 			"fname" : "Iron",
 			"id" : 3,
 			"lname" : "Man",
-			"speciality" : "Psychology"
+			"speciality" : "Mechanician"
 		},
 		{
 			"fname" : "Super",
 			"id" : 4,
 			"lname" : "Man",
-			"speciality" : "Naturopath"
+			"speciality" : "Laser therapist"
 		}
 	],
-	"meeting" : 
+	"meeting" :
 	[
 		{
-			"date" : 
+			"date" :
 			{
 				"day" : 6,
 				"hour" : 11,
@@ -47,7 +47,7 @@
 			"object" : "rekt"
 		},
 		{
-			"date" : 
+			"date" :
 			{
 				"day" : 8,
 				"hour" : 4,
@@ -59,7 +59,7 @@
 			"object" : "Mental illness"
 		},
 		{
-			"date" : 
+			"date" :
 			{
 				"day" : 7,
 				"hour" : 3,
@@ -71,7 +71,7 @@
 			"object" : "A test"
 		},
 		{
-			"date" : 
+			"date" :
 			{
 				"day" : 9,
 				"hour" : 3,
@@ -83,7 +83,7 @@
 			"object" : "A test"
 		},
 		{
-			"date" : 
+			"date" :
 			{
 				"day" : 7,
 				"hour" : 4,
@@ -95,32 +95,33 @@
 			"object" : "Incontinence"
 		}
 	],
-	"patient" : 
+	"patient" :
 	[
 		{
 			"blood_group" : "null",
 			"fname" : "Tanguy",
 			"id" : 0,
 			"lname" : "Lallemand",
-			"phone" : 0,
-			"prescriptions" : 
+			"phone" : 152404,
+			"prescriptions" :
 			[
 				{
-					"date" : 
+					"date" :
 					{
 						"day" : 5,
 						"hour" : 16,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" : 
+					"drugs" :
 					[
 						{
 							"name" : "Cafein",
 							"posology" : "50mg/h",
 							"quantity" : "1kg"
 						}
-					]
+					],
+					"prescriptor" : 0
 				}
 			],
 			"referent_doc_id" : 0,
@@ -132,24 +133,25 @@
 			"id" : 1,
 			"lname" : "Man",
 			"phone" : 0,
-			"prescriptions" : 
+			"prescriptions" :
 			[
 				{
-					"date" : 
+					"date" :
 					{
 						"day" : 8,
 						"hour" : 12,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" : 
+					"drugs" :
 					[
 						{
 							"name" : "Batdrug",
 							"posology" : "12",
 							"quantity" : "12/day"
 						}
-					]
+					],
+					"prescriptor" : 0
 				}
 			],
 			"referent_doc_id" : 0,
@@ -161,34 +163,35 @@
 			"id" : 2,
 			"lname" : "Joker",
 			"phone" : 0,
-			"prescriptions" : 
+			"prescriptions" :
 			[
 				{
-					"date" : 
+					"date" :
 					{
 						"day" : 9,
 						"hour" : 12,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" : 
+					"drugs" :
 					[
 						{
 							"name" : "Valium",
 							"posology" : "12",
 							"quantity" : "12/day"
 						}
-					]
+					],
+					"prescriptor" : 0
 				},
 				{
-					"date" : 
+					"date" :
 					{
 						"day" : 9,
 						"hour" : 12,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" : 
+					"drugs" :
 					[
 						{
 							"name" : "Anxiolitics1",
@@ -200,7 +203,8 @@
 							"posology" : "12",
 							"quantity" : "12/day"
 						}
-					]
+					],
+					"prescriptor" : 0
 				}
 			],
 			"referent_doc_id" : 1,
@@ -212,34 +216,35 @@
 			"id" : 3,
 			"lname" : "Thanos",
 			"phone" : 0,
-			"prescriptions" : 
+			"prescriptions" :
 			[
 				{
-					"date" : 
+					"date" :
 					{
 						"day" : 9,
 						"hour" : 12,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" : 
+					"drugs" :
 					[
 						{
 							"name" : "Universe",
 							"posology" : "12",
 							"quantity" : "12/day"
 						}
-					]
+					],
+					"prescriptor" : 0
 				},
 				{
-					"date" : 
+					"date" :
 					{
 						"day" : 9,
 						"hour" : 12,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" : 
+					"drugs" :
 					[
 						{
 							"name" : "Anxiolitics1",
@@ -251,11 +256,42 @@
 							"posology" : "12",
 							"quantity" : "12/day"
 						}
-					]
+					],
+					"prescriptor" : 0
 				}
 			],
 			"referent_doc_id" : 2,
 			"security_number" : 1236876545
+		},
+		{
+			"blood_group" : "O-",
+			"fname" : "Harley",
+			"id" : 4,
+			"lname" : "Queen",
+			"phone" : 256134865,
+			"prescriptions" :
+			[
+				{
+					"date" :
+					{
+						"day" : 12,
+						"hour" : 9,
+						"month" : 12,
+						"year" : 2018
+					},
+					"drugs" :
+					[
+						{
+							"name" : "Smile",
+							"posology" : "10/day",
+							"quantity" : "Much"
+						}
+					],
+					"prescriptor" : 3
+				}
+			],
+			"referent_doc_id" : 4,
+			"security_number" : 152511586
 		}
 	]
 }

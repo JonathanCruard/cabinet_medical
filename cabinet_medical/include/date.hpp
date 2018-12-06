@@ -7,12 +7,7 @@
 class date
 {
 public:
-//Variable
-    unsigned _year;
-    unsigned _month;
-    unsigned _day;
-    unsigned _hour;
-//class methods
+//Methods
     //setters
     void set_year(unsigned year);
     void set_month(unsigned month);
@@ -31,11 +26,16 @@ public:
     //displayers
     void display();
 
-//Methods
     //contructors
     date();
     date(unsigned year, unsigned month, unsigned day, unsigned hour);
     date(date const& copy);
+private:
+//Variable
+    unsigned _year;
+    unsigned _month;
+    unsigned _day;
+    unsigned _hour;
 };
 
 

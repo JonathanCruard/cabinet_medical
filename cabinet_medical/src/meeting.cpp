@@ -90,9 +90,10 @@ date meeting::get_date()
 
 void meeting::display()
 {
-    std::cout << _object << '\n';
+    std::cout << "##############################" << '\n';
     _meeting_date.display();
-    std::cout << "Doctor ID :" << _id_doctor << '\n';
-    std::cout << "Patient ID :" << _id_patient << '\n';
+    std::cout << "Doctor ID : " << _id_doctor << '\n';
+    std::cout << "Patient ID : " << _id_patient << '\n';
+    std::cout << "Object of the visit :" << '\n' << "   " << _object << '\n';
 
 }
