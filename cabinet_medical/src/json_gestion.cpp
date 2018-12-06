@@ -58,8 +58,8 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                     {
                         // Get prescription's drugs informations
                         string drug_name = prescription_json[index_prescription]["drugs"][index_drugs]["name"].asString();
-                        string quantity = prescription_json[index_prescription]["drugs"][index_drugs]["posology"].asString();
-                        string posology = prescription_json[index_prescription]["drugs"][index_drugs]["quantity"].asString();
+                        string posology = prescription_json[index_prescription]["drugs"][index_drugs]["posology"].asString();
+                        string quantity = prescription_json[index_prescription]["drugs"][index_drugs]["quantity"].asString();
                         // Instanciate a drug_struct object
                         drug_struct drugs_data(drug_name, quantity, posology);
                         // Add drug_struct object in list
