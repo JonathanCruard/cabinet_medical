@@ -148,7 +148,6 @@ void json_gestion::json_write(vector<patient> & patient_list, vector<doctor> & d
             // Get informations from this object and add them in json value to nest date
             prescription_value = construct_date_json_value(date_data);
             // Get informations of current prescriptions
-            std::cout << presc.get_prescriptor() << '\n';
             prescription_value["prescriptor"] = presc.get_prescriptor();
             // Get drug_struct object of current prescription
             list<drug_struct> drugs_list = presc.get_drugs();
