@@ -1,17 +1,41 @@
 {
-	"doctor" : 
+	"doctor" :
 	[
 		{
 			"fname" : "Jonathan",
 			"id" : 0,
 			"lname" : "Cruard",
 			"speciality" : "Psychology"
+		},
+		{
+			"fname" : "Professor",
+			"id" : 1,
+			"lname" : "Xavier",
+			"speciality" : "Psychology"
+		},
+		{
+			"fname" : "Clark",
+			"id" : 2,
+			"lname" : "Kent",
+			"speciality" : "Psychology"
+		},
+		{
+			"fname" : "Iron",
+			"id" : 3,
+			"lname" : "Man",
+			"speciality" : "Psychology"
+		},
+		{
+			"fname" : "Super",
+			"id" : 4,
+			"lname" : "Man",
+			"speciality" : "Naturopath"
 		}
 	],
-	"meeting" : 
+	"meeting" :
 	[
 		{
-			"date" : 
+			"date" :
 			{
 				"day" : 6,
 				"hour" : 11,
@@ -21,9 +45,59 @@
 			"id_doctor" : 0,
 			"id_patient" : 0,
 			"object" : "rekt"
-		}
+		},
+		{
+			"date" :
+			{
+				"day" : 8,
+				"hour" : 4,
+				"month" : 8,
+				"year" : 2012
+			},
+			"id_doctor" : 1,
+			"id_patient" : 3,
+			"object" : "Mental illness"
+		},
+		{
+			"date" :
+			{
+				"day" : 7,
+				"hour" : 3,
+				"month" : 7,
+				"year" : 2018
+			},
+			"id_doctor" : 1,
+			"id_patient" : 4,
+			"object" : "A test"
+		},
+		,
+		{
+			"date" :
+			{
+				"day" : 9,
+				"hour" : 3,
+				"month" : 7,
+				"year" : 2018
+			},
+			"id_doctor" : 1,
+			"id_patient" : 4,
+			"object" : "A test"
+		},
+		,
+		{
+			"date" :
+			{
+				"day" : 7,
+				"hour" : 4,
+				"month" : 5,
+				"year" : 2018
+			},
+			"id_doctor" : 2,
+			"id_patient" : 3,
+			"object" : "Incontinence"
+		},
 	],
-	"patient" : 
+	"patient" :
 	[
 		{
 			"blood_group" : "null",
@@ -31,22 +105,22 @@
 			"id" : 0,
 			"lname" : "Lallemand",
 			"phone" : 0,
-			"prescriptions" : 
+			"prescriptions" :
 			[
 				{
-					"date" : 
+					"date" :
 					{
 						"day" : 5,
 						"hour" : 16,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" : 
+					"drugs" :
 					[
 						{
 							"name" : "Cafein",
-							"posology" : "50mg/h",
-							"quantity" : "1kg"
+							"posology" : "1kg",
+							"quantity" : "50mg/h"
 						}
 					]
 				}
@@ -60,22 +134,22 @@
 			"id" : 1,
 			"lname" : "Man",
 			"phone" : 0,
-			"prescriptions" : 
+			"prescriptions" :
 			[
 				{
-					"date" : 
+					"date" :
 					{
 						"day" : 8,
 						"hour" : 12,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" : 
+					"drugs" :
 					[
 						{
 							"name" : "Batdrug",
-							"posology" : "12",
-							"quantity" : "12/day"
+							"posology" : "12/day",
+							"quantity" : "12"
 						}
 					]
 				}
@@ -89,50 +163,101 @@
 			"id" : 2,
 			"lname" : "Joker",
 			"phone" : 0,
-			"prescriptions" : 
+			"prescriptions" :
 			[
 				{
-					"date" : 
+					"date" :
 					{
 						"day" : 9,
 						"hour" : 12,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" : 
+					"drugs" :
 					[
 						{
 							"name" : "Valium",
-							"posology" : "12",
-							"quantity" : "12/day"
+							"posology" : "12/day",
+							"quantity" : "12"
 						}
 					]
 				},
 				{
-					"date" : 
+					"date" :
 					{
 						"day" : 9,
 						"hour" : 12,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" : 
+					"drugs" :
 					[
 						{
 							"name" : "Anxiolitics1",
-							"posology" : "12",
-							"quantity" : "5/day"
+							"posology" : "5/day",
+							"quantity" : "12"
 						},
 						{
 							"name" : "Anxiolitics2",
-							"posology" : "12",
-							"quantity" : "12/day"
+							"posology" : "12/day",
+							"quantity" : "12"
 						}
 					]
 				}
 			],
-			"referent_doc_id" : 0,
+			"referent_doc_id" : 1,
 			"security_number" : 12345785
+		},
+		{
+			"blood_group" : "O+",
+			"fname" : "Thanos",
+			"id" : 3,
+			"lname" : "Thanos",
+			"phone" : 0,
+			"prescriptions" :
+			[
+				{
+					"date" :
+					{
+						"day" : 9,
+						"hour" : 12,
+						"month" : 12,
+						"year" : 2018
+					},
+					"drugs" :
+					[
+						{
+							"name" : "Universe",
+							"posology" : "12/day",
+							"quantity" : "12"
+						}
+					]
+				},
+				{
+					"date" :
+					{
+						"day" : 9,
+						"hour" : 12,
+						"month" : 12,
+						"year" : 2018
+					},
+					"drugs" :
+					[
+						{
+							"name" : "Anxiolitics1",
+							"posology" : "5/day",
+							"quantity" : "12"
+						},
+						{
+							"name" : "Anxiolitics2",
+							"posology" : "12/day",
+							"quantity" : "12"
+						}
+					]
+				}
+			],
+			"referent_doc_id" : 2,
+			"security_number" : 1236876545
 		}
 	]
 }
