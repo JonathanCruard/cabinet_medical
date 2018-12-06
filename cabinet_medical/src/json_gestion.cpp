@@ -36,7 +36,7 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                 string blood_group = patientdat[index]["blood_group"].asString();
                 string fname = patientdat[index]["fname"].asString();
                 string lname = patientdat[index]["lname"].asString();
-                int phone_number = patientdat[index]["phone_number"].asInt();
+                int phone_number = patientdat[index]["phone"].asInt();
                 int security_number = patientdat[index]["security_number"].asInt();
                 int id = patientdat[index]["id"].asInt();
                 int referent_doc_id = patientdat[index]["referent_doc_id"].asInt();
