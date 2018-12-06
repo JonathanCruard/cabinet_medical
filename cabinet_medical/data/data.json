@@ -1,5 +1,5 @@
 {
-	"doctor" :
+	"doctor" : 
 	[
 		{
 			"fname" : "Jonathan",
@@ -32,10 +32,10 @@
 			"speciality" : "Naturopath"
 		}
 	],
-	"meeting" :
+	"meeting" : 
 	[
 		{
-			"date" :
+			"date" : 
 			{
 				"day" : 6,
 				"hour" : 11,
@@ -47,7 +47,7 @@
 			"object" : "rekt"
 		},
 		{
-			"date" :
+			"date" : 
 			{
 				"day" : 8,
 				"hour" : 4,
@@ -59,7 +59,7 @@
 			"object" : "Mental illness"
 		},
 		{
-			"date" :
+			"date" : 
 			{
 				"day" : 7,
 				"hour" : 3,
@@ -70,9 +70,8 @@
 			"id_patient" : 4,
 			"object" : "A test"
 		},
-		,
 		{
-			"date" :
+			"date" : 
 			{
 				"day" : 9,
 				"hour" : 3,
@@ -83,9 +82,8 @@
 			"id_patient" : 4,
 			"object" : "A test"
 		},
-		,
 		{
-			"date" :
+			"date" : 
 			{
 				"day" : 7,
 				"hour" : 4,
@@ -95,9 +93,9 @@
 			"id_doctor" : 2,
 			"id_patient" : 3,
 			"object" : "Incontinence"
-		},
+		}
 	],
-	"patient" :
+	"patient" : 
 	[
 		{
 			"blood_group" : "null",
@@ -105,22 +103,22 @@
 			"id" : 0,
 			"lname" : "Lallemand",
 			"phone" : 0,
-			"prescriptions" :
+			"prescriptions" : 
 			[
 				{
-					"date" :
+					"date" : 
 					{
 						"day" : 5,
 						"hour" : 16,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" :
+					"drugs" : 
 					[
 						{
 							"name" : "Cafein",
-							"posology" : "1kg",
-							"quantity" : "50mg/h"
+							"posology" : "50mg/h",
+							"quantity" : "1kg"
 						}
 					]
 				}
@@ -134,22 +132,22 @@
 			"id" : 1,
 			"lname" : "Man",
 			"phone" : 0,
-			"prescriptions" :
+			"prescriptions" : 
 			[
 				{
-					"date" :
+					"date" : 
 					{
 						"day" : 8,
 						"hour" : 12,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" :
+					"drugs" : 
 					[
 						{
 							"name" : "Batdrug",
-							"posology" : "12/day",
-							"quantity" : "12"
+							"posology" : "12",
+							"quantity" : "12/day"
 						}
 					]
 				}
@@ -163,44 +161,44 @@
 			"id" : 2,
 			"lname" : "Joker",
 			"phone" : 0,
-			"prescriptions" :
+			"prescriptions" : 
 			[
 				{
-					"date" :
+					"date" : 
 					{
 						"day" : 9,
 						"hour" : 12,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" :
+					"drugs" : 
 					[
 						{
 							"name" : "Valium",
-							"posology" : "12/day",
-							"quantity" : "12"
+							"posology" : "12",
+							"quantity" : "12/day"
 						}
 					]
 				},
 				{
-					"date" :
+					"date" : 
 					{
 						"day" : 9,
 						"hour" : 12,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" :
+					"drugs" : 
 					[
 						{
 							"name" : "Anxiolitics1",
-							"posology" : "5/day",
-							"quantity" : "12"
+							"posology" : "12",
+							"quantity" : "5/day"
 						},
 						{
 							"name" : "Anxiolitics2",
-							"posology" : "12/day",
-							"quantity" : "12"
+							"posology" : "12",
+							"quantity" : "12/day"
 						}
 					]
 				}
@@ -214,44 +212,44 @@
 			"id" : 3,
 			"lname" : "Thanos",
 			"phone" : 0,
-			"prescriptions" :
+			"prescriptions" : 
 			[
 				{
-					"date" :
+					"date" : 
 					{
 						"day" : 9,
 						"hour" : 12,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" :
+					"drugs" : 
 					[
 						{
 							"name" : "Universe",
-							"posology" : "12/day",
-							"quantity" : "12"
+							"posology" : "12",
+							"quantity" : "12/day"
 						}
 					]
 				},
 				{
-					"date" :
+					"date" : 
 					{
 						"day" : 9,
 						"hour" : 12,
 						"month" : 12,
 						"year" : 2018
 					},
-					"drugs" :
+					"drugs" : 
 					[
 						{
 							"name" : "Anxiolitics1",
-							"posology" : "5/day",
-							"quantity" : "12"
+							"posology" : "12",
+							"quantity" : "5/day"
 						},
 						{
 							"name" : "Anxiolitics2",
-							"posology" : "12/day",
-							"quantity" : "12"
+							"posology" : "12",
+							"quantity" : "12/day"
 						}
 					]
 				}
