@@ -39,5 +39,5 @@ string doctor::get_speciality()
 void doctor::display_doctor()
 {
     display();
-    std::cout << "Speciality : " << _speciality << '\n';
+    std::cout << "Speciality         : " << _speciality << '\n';
 }

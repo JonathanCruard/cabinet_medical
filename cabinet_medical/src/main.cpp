@@ -30,6 +30,7 @@ void patient_menu(vector<patient> & patient_list, vector<doctor> const& doctor_l
                 patient_list[current_patient_id].display();
             }
         }
+        std::cout << "********************************************************************************" << '\n';
         std::cout << '\n' << "      Patient menu"<< '\n';
         std::cout << "1 : add new patient" << '\n';
         std::cout << "2 : choose patient" << '\n';
@@ -66,16 +67,26 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
 {
     int current_doctor_id = -1;
     int choice = 9999;
+    bool more = false;
     while (true)
     {
         clear_screen();
         print_header();
         if (current_doctor_id != -1)
         {
-            std::cout << '\n' << "current doctor" << '\n';
-            doctor_list[current_doctor_id].display();
+            std::cout << '\n' << "      Current doctor" << '\n';
+            if (more)
+            {
+                doctor_list[current_doctor_id].display();
+                more = false;
+            }
+            else
+            {
+                doctor_list[current_doctor_id].display_doctor();
+            }
         }
-        std::cout << "Doctor menu"<< '\n';
+        std::cout << "********************************************************************************" << '\n';
+        std::cout << "      Doctor menu"<< '\n';
         std::cout << "1 : add new doctor" << '\n';
         std::cout << "2 : choose doctor" << '\n';
         if (current_doctor_id != -1)
@@ -95,7 +106,7 @@ void doctor_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
             break;
             if (current_doctor_id != -1)
             {
-                case 3: doctor_list[current_doctor_id].display_doctor();
+                case 3: more = true;
                 break;
             }
             default:
@@ -112,7 +123,7 @@ void agenda_menu(vector<patient> & patient_list, vector<doctor> & doctor_list, v
     {
         clear_screen();
         print_header();
-        std::cout << "Agenda"<< '\n';
+        std::cout << "      Agenda"<< '\n';
         std::cout << "1 : add new meeting" << '\n';
         std::cout << "2 : view meetings" << '\n';
         std::cout << "0 : main menu" << '\n';
@@ -146,6 +157,7 @@ int main()
     {
         clear_screen();
         print_header();
+        std::cout << "********************************************************************************" << '\n';
         std::cout << "1 : patients menu" << '\n';
         std::cout << "2 : doctors menu" << '\n';
         std::cout << "3 : agenda" << '\n';
