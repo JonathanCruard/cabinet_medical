@@ -32,22 +32,107 @@
 			"lname" : "Lallemand",
 			"phone" : 0,
 			"prescriptions" : 
-			{
-				"date" : 
+			[
 				{
-					"day" : 5,
-					"hour" : 16,
-					"month" : 12,
-					"year" : 2018
-				},
-				"drugs" : 
-				{
-					"name" : "Cafein",
-					"posology" : "1kg",
-					"quantity" : "50mg/h"
+					"date" : 
+					{
+						"day" : 5,
+						"hour" : 16,
+						"month" : 12,
+						"year" : 2018
+					},
+					"drugs" : 
+					[
+						{
+							"name" : "Cafein",
+							"posology" : "50mg/h",
+							"quantity" : "1kg"
+						}
+					]
 				}
-			},
+			],
+			"referent_doc_id" : 0,
 			"security_number" : 69696969
+		},
+		{
+			"blood_group" : "O-",
+			"fname" : "Bat",
+			"id" : 1,
+			"lname" : "Man",
+			"phone" : 0,
+			"prescriptions" : 
+			[
+				{
+					"date" : 
+					{
+						"day" : 8,
+						"hour" : 12,
+						"month" : 12,
+						"year" : 2018
+					},
+					"drugs" : 
+					[
+						{
+							"name" : "Batdrug",
+							"posology" : "12",
+							"quantity" : "12/day"
+						}
+					]
+				}
+			],
+			"referent_doc_id" : 0,
+			"security_number" : 123456789
+		},
+		{
+			"blood_group" : "AB",
+			"fname" : "Joker",
+			"id" : 2,
+			"lname" : "Joker",
+			"phone" : 0,
+			"prescriptions" : 
+			[
+				{
+					"date" : 
+					{
+						"day" : 9,
+						"hour" : 12,
+						"month" : 12,
+						"year" : 2018
+					},
+					"drugs" : 
+					[
+						{
+							"name" : "Valium",
+							"posology" : "12",
+							"quantity" : "12/day"
+						}
+					]
+				},
+				{
+					"date" : 
+					{
+						"day" : 9,
+						"hour" : 12,
+						"month" : 12,
+						"year" : 2018
+					},
+					"drugs" : 
+					[
+						{
+							"name" : "Anxiolitics1",
+							"posology" : "12",
+							"quantity" : "5/day"
+						},
+						{
+							"name" : "Anxiolitics2",
+							"posology" : "12",
+							"quantity" : "12/day"
+						}
+					]
+				}
+			],
+			"referent_doc_id" : 0,
+			"security_number" : 12345785
 		}
 	]
 }

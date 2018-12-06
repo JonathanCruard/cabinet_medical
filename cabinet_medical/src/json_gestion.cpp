@@ -31,7 +31,6 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
             for ( int index = 0; index < patientdat.size(); ++index)
             {
                 // Initialize some structure to stock informations
-                list<drug_struct> list_drugs;
                 vector<prescription> prescription_list;
                 // Get patient's informations
                 string blood_group = patientdat[index]["blood_group"].asString();
@@ -51,6 +50,9 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                     int prescriptor = prescription_json[index_prescription]["prescriptor"].asInt();
                     // Get prescription's date informations and get an instance of it
                     date prescription_date = parse_date(prescription_json[index_prescription]["date"]);
+
+                    // Initialize some structure to stock informations
+                    list<drug_struct> list_drugs;
                     // Iterate tought drugs (could be multiple for one prescription)
                     for (int index_drugs = 0; index_drugs < prescription_json[index_prescription]["drugs"].size(); index_drugs++)
                     {
