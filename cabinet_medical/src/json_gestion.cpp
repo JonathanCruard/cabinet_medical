@@ -26,12 +26,13 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
         Json::Value patientdat = root["patient"];
         if (patientdat != NULL)
         {
-            // Initialize some structure to stock informations
-            list<drug_struct> list_drugs;
-            vector<prescription> prescription_list;
+
             // Iterate over the sequence elements.
             for ( int index = 0; index < patientdat.size(); ++index)
             {
+                // Initialize some structure to stock informations
+                list<drug_struct> list_drugs;
+                vector<prescription> prescription_list;
                 // Get patient's informations
                 string blood_group = patientdat[index]["blood_group"].asString();
                 string fname = patientdat[index]["fname"].asString();
@@ -57,7 +58,7 @@ void json_gestion::json_read(vector<patient> & patient_list, vector<doctor> & do
                         string drug_name = prescription_json[index_prescription]["drugs"][index_drugs]["name"].asString();
                         string quantity = prescription_json[index_prescription]["drugs"][index_drugs]["posology"].asString();
                         string posology = prescription_json[index_prescription]["drugs"][index_drugs]["quantity"].asString();
-                        // Instanciate a drug_struct object 
+                        // Instanciate a drug_struct object
                         drug_struct drugs_data(drug_name, quantity, posology);
                         // Add drug_struct object in list
                         list_drugs.push_back(drugs_data);
