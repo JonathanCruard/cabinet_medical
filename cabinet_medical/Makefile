@@ -39,7 +39,7 @@ $(OBJDIR)/json_gestion.o \
 $(OBJDIR)/date.o
 
 
-TARGET=$(BINDIR)/gestion_cabinet.exe
+TARGET=$(BINDIR)/gestion_cabinet
 
 all: $(TARGET)
 
